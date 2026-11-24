@@ -13,3 +13,5 @@ Java, semester 1. Study notes and practical labs.
 | 7 | [Selection #2: else if, Nesting and switch](Lectures/Lecture-07-Selection-2-else-if-Nesting-and-switch.md) | [Multiple Selection and switch Hands-on Workbook](Labs/Lab-07-Multiple-Selection-and-switch-Hands-on-Workbook.md) |
 | 8 | [Looping #1: Repetition and the while Statement](Lectures/Lecture-08-Looping-1-Repetition-and-the-while-Statement.md) | [Repetition (while and do-while) Hands-on Workbook](Labs/Lab-08-Repetition-while-and-do-while-Hands-on-Workbook.md) |
 | 9 | [Looping #2: Repetition and the for Loop](Lectures/Lecture-09-Looping-2-Repetition-and-the-for-Loop.md) | [Repetition (for Loop) Hands-on Workbook](Labs/Lab-09-Repetition-for-Loop-Hands-on-Workbook.md) |
+| 10 | [Basic Software Design: Analysis, Design and Implementation](Lectures/Lecture-10-Basic-Software-Design.md) | [Software Design Hands-on Workbook](Labs/Lab-10-Software-Design-Hands-on-Workbook.md) |
+| 11 | [Collections #1: Fixed-Size Arrays](Lectures/Lecture-11-Collections-1-Arrays.md) | [Collections #1 (Arrays) Hands-on Workbook](Labs/Lab-11-Collections-1-Arrays-Hands-on-Workbook.md) |
