@@ -7,6 +7,7 @@ Lecture notes and practical labs for my BSc (Hons) Cyber Security degree at Live
 | Module | Title | Lectures | Labs |
 | --- | --- | --- | --- |
 | 4300COMP | [Introduction to Programming](4300COMP-Introduction-to-Programming/) (Java) | 9 | 9 |
+| 4301COMP | [Computer Systems Architecture](4301COMP-Computer-Systems-Architecture/) | 1 | 1 |
 
 ## Folder layout
 
@@ -21,3 +22,4 @@ Lecture notes and practical labs for my BSc (Hons) Cyber Security degree at Live
 - Lectures are plain-English rewrites of the official slides with worked examples and practice questions.
 - Labs are hands-on workbooks with 20 tasks each, plus an answer key. Practice tasks are not official assessment tasks.
 - Code examples were compiled and run with Java 21 (`javac`) unless a lab says otherwise.
+- 4301COMP scripts were run with Python 3.13, and Mermaid diagrams were checked with the Mermaid 11 parser.
