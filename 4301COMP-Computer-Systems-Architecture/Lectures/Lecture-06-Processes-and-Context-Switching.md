@@ -454,7 +454,7 @@ sequenceDiagram
     participant B as Thread B (user mode)
     A->>K: timer interrupt (A's time slice is over)
     K->>K: save A's PC, registers, stack pointer into A's PCB/thread record
-    K->>K: mark A Ready; scheduler picks B
+    K->>K: mark A Ready, then the scheduler picks B
     K->>K: load B's saved PC, registers, stack pointer (and memory mappings if B is in another process)
     K->>B: return to user mode: B continues exactly where it stopped
     Note over A,B: Later, the same steps in reverse bring A back
