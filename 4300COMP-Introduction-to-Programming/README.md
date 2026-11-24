@@ -17,3 +17,4 @@ Java, semester 1. Study notes and practical labs.
 | 11 | [Collections #1: Fixed-Size Arrays](Lectures/Lecture-11-Collections-1-Arrays.md) | [Collections #1 (Arrays) Hands-on Workbook](Labs/Lab-11-Collections-1-Arrays-Hands-on-Workbook.md) |
 | 12 | [Collections #2: Variable-Size Collections and ArrayList](Lectures/Lecture-12-Collections-2-ArrayList.md) | [Collections #2 (ArrayList) Hands-on Workbook](Labs/Lab-12-Collections-2-ArrayList-Hands-on-Workbook.md) |
 | 13 | [String and char Types](Lectures/Lecture-13-String-and-char-Types.md) | [String and char Hands-on Workbook](Labs/Lab-13-String-and-char-Hands-on-Workbook.md) |
+| 14 | [Methods #1: Method Definitions and Void Methods](Lectures/Lecture-14-Methods-1-Method-Definitions-and-Void-Methods.md) | [Void Methods Hands-on Workbook](Labs/Lab-14-Void-Methods-Hands-on-Workbook.md) |
