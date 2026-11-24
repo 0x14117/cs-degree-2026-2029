@@ -19,3 +19,4 @@ Semester 1. Study notes and practical labs built from the official teaching-week
 | 13 | [Wireless Networks](Lectures/Lecture-13-Wireless-Networks.md) (TW08 Session A) | [Wireless Networks Hands-on Workbook](Labs/Lab-13-Wireless-Networks-Hands-on-Workbook.md) |
 | 14 | [Binary and Decimal Number Systems](Lectures/Lecture-14-Binary-and-Decimal-Number-Systems.md) (TW08 Session B) | [Binary and Decimal Number Systems Hands-on Workbook](Labs/Lab-14-Binary-and-Decimal-Number-Systems-Hands-on-Workbook.md) |
 | 15 | [Hexadecimal and Data Representation](Lectures/Lecture-15-Hexadecimal-and-Data-Representation.md) (TW09 Session A) | [Hexadecimal and Data Representation Hands-on Workbook](Labs/Lab-15-Hexadecimal-and-Data-Representation-Hands-on-Workbook.md) |
+| 16 | [Memory and Storage](Lectures/Lecture-16-Memory-and-Storage.md) (TW09 Session B) | [Memory and Storage Hands-on Workbook](Labs/Lab-16-Memory-and-Storage-Hands-on-Workbook.md) |
