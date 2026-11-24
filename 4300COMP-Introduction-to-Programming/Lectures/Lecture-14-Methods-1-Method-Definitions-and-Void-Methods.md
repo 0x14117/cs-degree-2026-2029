@@ -444,6 +444,8 @@ Option B is the common wrong answer: it assumes each method finishes before the 
 ## 9. Quick reference
 
 ```java
+import java.util.Scanner;
+
 public class MyProgram {
     private static Scanner console = new Scanner(System.in);  // shared by all methods
     public static int count = 0;                                // shared static variable
