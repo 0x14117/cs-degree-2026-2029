@@ -19,3 +19,4 @@ Java, semester 1. Study notes and practical labs.
 | 13 | [String and char Types](Lectures/Lecture-13-String-and-char-Types.md) | [String and char Hands-on Workbook](Labs/Lab-13-String-and-char-Hands-on-Workbook.md) |
 | 14 | [Methods #1: Method Definitions and Void Methods](Lectures/Lecture-14-Methods-1-Method-Definitions-and-Void-Methods.md) | [Void Methods Hands-on Workbook](Labs/Lab-14-Void-Methods-Hands-on-Workbook.md) |
 | 15 | [Methods #2: Value-Returning Methods](Lectures/Lecture-15-Methods-2-Value-Returning-Methods.md) | [Value-Returning Methods Hands-on Workbook](Labs/Lab-15-Value-Returning-Methods-Hands-on-Workbook.md) |
+| 16 | [Classes and Objects: the Basics](Lectures/Lecture-16-Classes-and-Objects-the-Basics.md) | [Classes and Objects Hands-on Workbook](Labs/Lab-16-Classes-and-Objects-Hands-on-Workbook.md) |
