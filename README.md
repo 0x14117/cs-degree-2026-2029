@@ -6,7 +6,7 @@ Lecture notes and practical labs for my BSc (Hons) Cyber Security degree at Live
 
 | Module | Title | Lectures | Labs |
 | --- | --- | --- | --- |
-| 4300COMP | [Introduction to Programming](4300COMP-Introduction-to-Programming/) (Java) | 12 | 12 |
+| 4300COMP | [Introduction to Programming](4300COMP-Introduction-to-Programming/) (Java) | 13 | 13 |
 | 4301COMP | [Computer Systems Architecture](4301COMP-Computer-Systems-Architecture/) | 17 | 17 |
 
 ## Folder layout
