@@ -11,3 +11,4 @@ Java, semester 1. Study notes and practical labs.
 | 5 | [Input and Output #2: File I/O](Lectures/Lecture-05-Input-and-Output-2-File-IO.md) | [File Input and Output Hands-on Workbook](Labs/Lab-05-File-Input-and-Output-Hands-on-Workbook.md) |
 | 6 | [Selection #1: Conditions and if-else](Lectures/Lecture-06-Selection-1-Conditions-and-if-else.md) | [Selection (if-else) Hands-on Workbook](Labs/Lab-06-Selection-if-else-Hands-on-Workbook.md) |
 | 7 | [Selection #2: else if, Nesting and switch](Lectures/Lecture-07-Selection-2-else-if-Nesting-and-switch.md) | [Multiple Selection and switch Hands-on Workbook](Labs/Lab-07-Multiple-Selection-and-switch-Hands-on-Workbook.md) |
+| 8 | [Looping #1: Repetition and the while Statement](Lectures/Lecture-08-Looping-1-Repetition-and-the-while-Statement.md) | [Repetition (while and do-while) Hands-on Workbook](Labs/Lab-08-Repetition-while-and-do-while-Hands-on-Workbook.md) |
