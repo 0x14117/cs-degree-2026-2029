@@ -9,6 +9,12 @@ Lecture notes and practical labs for my BSc (Hons) Cyber Security degree at Live
 | 4300COMP | [Introduction to Programming](4300COMP-Introduction-to-Programming/) (Java) | 16 | 16 |
 | 4301COMP | [Computer Systems Architecture](4301COMP-Computer-Systems-Architecture/) | 17 | 17 |
 
+## Self-study
+
+| Course | Title | Lectures | Labs |
+| --- | --- | --- | --- |
+| Python | [Python Mastery](Python-Mastery/) (beginner to professional, self-paced) | 1 | 1 |
+
 ## Folder layout
 
 ```text
