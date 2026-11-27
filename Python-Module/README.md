@@ -33,7 +33,7 @@ Every learning day has two parts that go together:
 ## Folder layout
 
 ```text
-Python-Mastery/
+Python-Module/
 ├── README.md, COURSE_ROADMAP.md, PROGRESS.md, LEARNING_LOG.md, RESOURCES.md
 ├── 00-Foundations/
 │   └── Chapter-01-Introduction-to-Programming-and-Python/

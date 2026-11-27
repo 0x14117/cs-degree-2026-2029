@@ -23,7 +23,7 @@
 5. Run each file from the terminal:
 
    ```bash
-   cd Python-Mastery/00-Foundations/Chapter-01-Introduction-to-Programming-and-Python/solutions/my-solutions
+   cd Python-Module/00-Foundations/Chapter-01-Introduction-to-Programming-and-Python/solutions/my-solutions
    python3 ex01_hello.py
    ```
 
@@ -808,7 +808,7 @@ These are not required, but they stretch you.
 
 ## Submitting for review
 
-When you finish a level, say **"Review Day 1, Level N"** and share your files (paste them, or commit and push them on the `python` branch). For each exercise you will get:
+When you finish a level, say **"Review Day 1, Level N"** and share your files (paste them, or commit and push them to this repository). For each exercise you will get:
 
 - ✅ pass, or 🔁 revise
 - syntax, logic or style issues, with **why** they matter
