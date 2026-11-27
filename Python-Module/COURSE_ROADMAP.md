@@ -10,7 +10,7 @@ Day numbers are planned, not fixed. Hard chapters will get extra days.
 
 ---
 
-## Part I — Programming Foundations  (`00-Foundations/`)
+## Part I — Programming Foundations
 
 | Ch | Chapter | Planned days | Status |
 | --- | --- | --- | --- |
@@ -30,7 +30,7 @@ Day numbers are planned, not fixed. Hard chapters will get extra days.
 | 14 | Basic debugging (reading tracebacks, print debugging) | 17 | ⬜ |
 | — | **Part I assessment + project:** unit converter and student grade calculator | 18–19 | ⬜ |
 
-## Part II — Logic and Control Flow  (`01-Control-Flow/`)
+## Part II — Logic and Control Flow
 
 | Ch | Chapter | Status |
 | --- | --- | --- |
@@ -49,7 +49,7 @@ Day numbers are planned, not fixed. Hard chapters will get extra days.
 | 27 | Algorithmic thinking (decomposition, pseudocode, tracing) | ⬜ |
 | — | **Assessment + projects:** number guessing game, password validator, text quiz | ⬜ |
 
-## Part III — Python Data Structures  (`02-Data-Structures/`)
+## Part III — Python Data Structures
 
 | Ch | Chapter | Status |
 | --- | --- | --- |
@@ -67,7 +67,7 @@ Day numbers are planned, not fixed. Hard chapters will get extra days.
 | 39 | References and object identity (`is`, `id()`, aliasing, copying) | ⬜ |
 | — | **Assessment + projects:** contact book, inventory system | ⬜ |
 
-## Part IV — Functions and Modular Programming  (`03-Functions/`)
+## Part IV — Functions and Modular Programming
 
 | Ch | Chapter | Status |
 | --- | --- | --- |
@@ -84,7 +84,7 @@ Day numbers are planned, not fixed. Hard chapters will get extra days.
 | 50 | Tour of the standard library | ⬜ |
 | — | **Assessment + project:** command-line calculator as a module | ⬜ |
 
-## Part V — Files, Data and Error Handling  (`04-Files-and-Errors/`)
+## Part V — Files, Data and Error Handling
 
 | Ch | Chapter | Status |
 | --- | --- | --- |
@@ -98,7 +98,7 @@ Day numbers are planned, not fixed. Hard chapters will get extra days.
 | 58 | Data processing pipelines | ⬜ |
 | — | **Assessment + projects:** expense tracker, CSV data analyser, file organiser | ⬜ |
 
-## Part VI — Object-Oriented Programming  (`05-OOP/`)
+## Part VI — Object-Oriented Programming
 
 | Ch | Chapter | Status |
 | --- | --- | --- |
@@ -116,7 +116,7 @@ Day numbers are planned, not fixed. Hard chapters will get extra days.
 | 70 | Designing object-oriented applications | ⬜ |
 | — | **Assessment + project:** library or bank account system | ⬜ |
 
-## Part VII — Intermediate and Advanced Python  (`06-Advanced-Python/`)
+## Part VII — Intermediate and Advanced Python
 
 | Ch | Chapter | Status |
 | --- | --- | --- |
@@ -134,7 +134,7 @@ Day numbers are planned, not fixed. Hard chapters will get extra days.
 | 82 | Python internals (bytecode, `dis`) | ⬜ |
 | 83 | Performance optimisation | ⬜ |
 
-## Part VIII — Software Engineering  (`07-Software-Engineering/`)
+## Part VIII — Software Engineering
 
 | Ch | Chapter | Status |
 | --- | --- | --- |
@@ -150,7 +150,7 @@ Day numbers are planned, not fixed. Hard chapters will get extra days.
 | 93 | Code quality tools (linters, formatters, type checkers) | ⬜ |
 | — | **Project:** packaged command-line application with tests | ⬜ |
 
-## Part IX — Databases and Web Development  (`08-Databases-and-Web/`)
+## Part IX — Databases and Web Development
 
 | Ch | Chapter | Status |
 | --- | --- | --- |
@@ -167,7 +167,7 @@ Day numbers are planned, not fixed. Hard chapters will get extra days.
 | 104 | Application security (OWASP basics) | ⬜ |
 | — | **Project:** database-backed REST API | ⬜ |
 
-## Part X — Automation, Networking and Cybersecurity  (`09-Automation-Networking-Cybersecurity/`)
+## Part X — Automation, Networking and Cybersecurity
 
 All security work happens on my own machines or in authorised lab environments only.
 
@@ -192,7 +192,7 @@ All security work happens on my own machines or in authorised lab environments o
 | 121 | Vulnerability assessment automation in authorised labs | ⬜ |
 | — | **Projects:** network monitor, log analysis system, file integrity monitor, forensics utilities, automated backup tool | ⬜ |
 
-## Part XI — Advanced Development  (`10-Advanced-Development/`)
+## Part XI — Advanced Development
 
 | Ch | Chapter | Status |
 | --- | --- | --- |

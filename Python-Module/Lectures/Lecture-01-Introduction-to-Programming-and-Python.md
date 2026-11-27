@@ -396,9 +396,9 @@ A **logic error** is the most dangerous kind, because nothing tells you about it
 
 ## E. Code demonstrations
 
-All of these are in the `examples/` folder. **Type them yourself first**, then compare with the file.
+All of these are in the [`Examples/Lecture-01/`](../Examples/Lecture-01/) folder. **Type them yourself first**, then compare with the file.
 
-### Demo 1 — Hello, world (`examples/ex01_hello.py`)
+### Demo 1 — Hello, world (`Examples/Lecture-01/ex01_hello.py`)
 
 ```python
 # ex01_hello.py
@@ -419,7 +419,7 @@ Hello, world!
 
 **Why:** `print` displays its argument without the quotes, then ends the line.
 
-### Demo 2 — Sequence (`examples/ex02_several_lines.py`)
+### Demo 2 — Sequence (`Examples/Lecture-01/ex02_several_lines.py`)
 
 ```python
 # ex02_several_lines.py
@@ -450,7 +450,7 @@ Let's begin.
 | 5 | 6 | Prints `Let's begin.` The apostrophe is fine inside double quotes | …plus `Let's begin.` |
 | 6 | end | No more lines, so the program ends | |
 
-### Demo 3 — Several values, `sep` and `end` (`examples/ex03_print_options.py`)
+### Demo 3 — Several values, `sep` and `end` (`Examples/Lecture-01/ex03_print_options.py`)
 
 ```python
 # ex03_print_options.py
@@ -481,7 +481,7 @@ Loading... done
 
 **Common mistake:** `print("Loading", end=" ")` with a space and then `print("...")` gives `Loading ...`, with a space you may not want. `end` adds *exactly* what you give it.
 
-### Demo 4 — Text versus numbers (`examples/ex04_text_versus_numbers.py`)
+### Demo 4 — Text versus numbers (`Examples/Lecture-01/ex04_text_versus_numbers.py`)
 
 ```python
 # ex04_text_versus_numbers.py
@@ -507,7 +507,7 @@ print(7 / 2)
 
 **Why:** line 5 combines both ideas. The first argument is a string, shown as is, and the second is an expression, worked out to `10`. This "label, then calculated value" pattern is very common.
 
-### Demo 5 — Escape sequences (`examples/ex05_escape_sequences.py`)
+### Demo 5 — Escape sequences (`Examples/Lecture-01/ex05_escape_sequences.py`)
 
 ```python
 # ex05_escape_sequences.py
@@ -534,7 +534,7 @@ A Windows path: C:\Users\afaq
 
 **Why:** one string with `\n` produces two lines of output. `\t` jumps to the next tab stop, which lines up `Afaq` and `Cyber Security`. `\"` and `\'` put quote marks inside strings that use the same quotes. `\\` produces one real backslash.
 
-### Demo 6 — Triple quotes (`examples/ex06_triple_quotes.py`)
+### Demo 6 — Triple quotes (`Examples/Lecture-01/ex06_triple_quotes.py`)
 
 ```python
 # ex06_triple_quotes.py
@@ -556,7 +556,7 @@ print("""+----------------------+
 
 One `print`, one string, four lines. The line breaks inside the triple quotes are part of the string.
 
-### Demo 7 — Comments (`examples/ex07_comments.py`)
+### Demo 7 — Comments (`Examples/Lecture-01/ex07_comments.py`)
 
 ```python
 # ex07_comments.py
@@ -578,7 +578,7 @@ Goodbye!
 
 The commented-out `print` on line 7 never runs. Blank lines are ignored too, and you should use them to separate sections of code.
 
-### Demo 8 — A syntax error stops everything (`examples/ex08_syntax_error.py`)
+### Demo 8 — A syntax error stops everything (`Examples/Lecture-01/ex08_syntax_error.py`)
 
 ```python
 # ex08_syntax_error.py
@@ -609,7 +609,7 @@ SyntaxError: '(' was never closed
 
 > **Tip:** the line Python reports is where it *noticed* the problem, which is sometimes *after* the real mistake. If the reported line looks fine, check the line above it.
 
-### Demo 9 — A runtime error stops at that line (`examples/ex09_name_error.py`)
+### Demo 9 — A runtime error stops at that line (`Examples/Lecture-01/ex09_name_error.py`)
 
 ```python
 # ex09_name_error.py
@@ -639,7 +639,7 @@ NameError: name 'Print' is not defined. Did you mean: 'print'?
 3. `in <module>` means "in the main part of the file", not inside a function.
 4. `Traceback (most recent call last):` is the heading. You will see longer tracebacks once you write functions.
 
-### Demo 10 — Joining text and a number with `+` (`examples/ex10_type_error.py`)
+### Demo 10 — Joining text and a number with `+` (`Examples/Lecture-01/ex10_type_error.py`)
 
 ```python
 # ex10_type_error.py
@@ -668,7 +668,7 @@ print("Age: " + "20")   # make both strings, so + joins them
 
 > **If you know Java:** Java happily converts the number for you in `"Age: " + 20`. Python deliberately does not. This is one of the first places the two languages differ.
 
-### Demo 11 — A logic error (`examples/ex11_logic_error.py`)
+### Demo 11 — A logic error (`Examples/Lecture-01/ex11_logic_error.py`)
 
 ```python
 # ex11_logic_error.py
@@ -685,7 +685,7 @@ Area of a 3 by 4 rectangle: 7
 
 No error message at all. The program ran perfectly and the answer is wrong. Python did exactly what was written, not what was meant. The fix is `3 * 4`, but you only find it by **knowing what answer to expect**.
 
-### Demo 12 — A small realistic program (`examples/ex12_receipt.py`)
+### Demo 12 — A small realistic program (`Examples/Lecture-01/ex12_receipt.py`)
 
 ```python
 # ex12_receipt.py
@@ -830,7 +830,7 @@ A logic error does not appear on this chart at all. The program follows the happ
 
 ## J. Knowledge check
 
-Answer these in your own words **before** starting the lab. Write your answers in `solutions/my-solutions/knowledge_check.md` and they will be reviewed together with the lab.
+Answer these in your own words **before** starting the lab. Write your answers in `My-Solutions/Lab-01/knowledge_check.md` and they will be reviewed together with the lab.
 
 1. What is the difference between an algorithm and a program?
 2. Why does a computer need instructions to be more precise than a person does? Give an example from everyday life.
@@ -848,4 +848,4 @@ Answer these in your own words **before** starting the lab. Write your answers i
 14. What is wrong with `print("Saved to C:\new\test.txt")`, and how would you fix it?
 15. Who created Python, roughly when, and what is its name taken from? Why should you avoid tutorials that write `print "hello"`?
 
-When you have answered them, open [`lab.md`](lab.md).
+When you have answered them, open [Lab 1](../Labs/Lab-01-Introduction-to-Programming-and-Python-Hands-on-Workbook.md).

@@ -1,6 +1,6 @@
 # Day 1 Laboratory — Introduction to Programming and Python
 
-**Part I · Chapter 1 · Day 1** · 30 exercises · Goes with [lecture.md](lecture.md)
+**Part I · Chapter 1 · Day 1** · 30 exercises · Goes with [Lecture 1](../Lectures/Lecture-01-Introduction-to-Programming-and-Python.md)
 
 ## Before you start
 
@@ -11,7 +11,7 @@
 ### Setup
 
 1. Make sure `python3 --version` (macOS/Linux) or `py --version` (Windows) shows Python 3.
-2. Work inside `solutions/my-solutions/` in this chapter's folder.
+2. Work inside the `My-Solutions/Lab-01/` folder.
 3. Create **one file per exercise**, named as the exercise says, for example `ex01_hello.py`.
 4. Start every file with a two-line header comment:
 
@@ -23,7 +23,7 @@
 5. Run each file from the terminal:
 
    ```bash
-   cd Python-Module/00-Foundations/Chapter-01-Introduction-to-Programming-and-Python/solutions/my-solutions
+   cd Python-Module/My-Solutions/Lab-01
    python3 ex01_hello.py
    ```
 
@@ -815,7 +815,7 @@ When you finish a level, say **"Review Day 1, Level N"** and share your files (p
 - an improved or alternative solution, **after** you have attempted it
 - a short note on what to practise
 
-Reference solutions go in `solutions/reference/` only after review.
+Reference solutions go in `Reference-Solutions/Lab-01/` only after review.
 
 ## Progress tracker
 
