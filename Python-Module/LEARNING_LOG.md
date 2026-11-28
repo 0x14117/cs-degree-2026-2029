@@ -23,3 +23,7 @@ Template:
 ## Day 1 — 2026-11-27 — Introduction to Programming and Python
 
 Course set up. Lecture and lab ready. Entry to be written after studying.
+
+## Day 2 — 2026-11-28 — Understanding Programming Languages in Depth
+
+Lecture and lab ready. Entry to be written after studying.

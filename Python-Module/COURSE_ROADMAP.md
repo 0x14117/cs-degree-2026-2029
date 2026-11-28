@@ -15,7 +15,7 @@ Day numbers are planned, not fixed. Hard chapters will get extra days.
 | Ch | Chapter | Planned days | Status |
 | --- | --- | --- | --- |
 | 1 | Introduction to programming and Python (what a program is, languages, how Python runs code, `print()`, first errors) | 1 | 🟡 |
-| 2 | Understanding programming languages in depth (compilers, interpreters, bytecode, CPython) | 2 | ⬜ |
+| 2 | Understanding programming languages in depth (compilers, interpreters, bytecode, CPython) | 2 | 🟡 |
 | 3 | Installing Python and setting up the development environment (python.org, VS Code, terminal, PATH) | 3 | ⬜ |
 | 4 | The Python interpreter and execution (REPL, scripts, `python -c`, how a `.py` file is run) | 4 | ⬜ |
 | 5 | Variables and memory (names, objects, assignment, naming rules) | 5–6 | ⬜ |

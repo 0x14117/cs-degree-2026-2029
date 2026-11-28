@@ -16,6 +16,10 @@ ENV/
 .coverage
 htmlcov/
 
+# Compiled Java and C from the comparison labs
+*.class
+*.out
+
 # Build output
 build/
 dist/

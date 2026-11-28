@@ -5,6 +5,7 @@ Self-study Python course, from beginner to professional. Each day is one lecture
 | # | Lecture | Lab |
 | --- | --- | --- |
 | 1 | [Introduction to Programming and Python](Lectures/Lecture-01-Introduction-to-Programming-and-Python.md) | [Hands-on Workbook (30 exercises)](Labs/Lab-01-Introduction-to-Programming-and-Python-Hands-on-Workbook.md) |
+| 2 | [Understanding Programming Languages in Depth](Lectures/Lecture-02-Understanding-Programming-Languages-in-Depth.md) | [Hands-on Workbook (30 exercises)](Labs/Lab-02-Understanding-Programming-Languages-in-Depth-Hands-on-Workbook.md) |
 
 ## How to study a day
 

@@ -17,6 +17,15 @@ Official sources come first. When a tutorial disagrees with the official documen
 | PEP 8 style guide | https://peps.python.org/pep-0008/ | How professional Python code is laid out |
 | PEP 20, the Zen of Python | https://peps.python.org/pep-0020/ | Python's design philosophy (`import this`) |
 | Status of Python versions | https://devguide.python.org/versions/ | Which versions are supported |
+| The Python Language Reference | https://docs.python.org/3/reference/ | The specification of the language (Day 2) |
+| `dis`, the disassembler | https://docs.python.org/3/library/dis.html | Reading bytecode and the list of instructions |
+| `ast` | https://docs.python.org/3/library/ast.html | Abstract syntax trees |
+| `tokenize` | https://docs.python.org/3/library/tokenize.html | The tokenizer |
+| `py_compile` | https://docs.python.org/3/library/py_compile.html | Making `.pyc` files |
+| `timeit` | https://docs.python.org/3/library/timeit.html | Timing small pieces of code |
+| PEP 3147, `__pycache__` directories | https://peps.python.org/pep-3147/ | Why `.pyc` files live where they do |
+| PEP 659, specialising adaptive interpreter | https://peps.python.org/pep-0659/ | How CPython 3.11+ speeds up bytecode |
+| What's new in Python 3.15 | https://docs.python.org/3/whatsnew/3.15.html | The latest release, including the experimental JIT |
 
 ## Tools
 
