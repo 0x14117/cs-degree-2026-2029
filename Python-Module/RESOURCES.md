@@ -16,9 +16,11 @@ Official sources come first. When a tutorial disagrees with the official documen
 | Glossary | https://docs.python.org/3/glossary.html | Looking up terms |
 | PEP 8 style guide | https://peps.python.org/pep-0008/ | How professional Python code is laid out |
 | PEP 20, the Zen of Python | https://peps.python.org/pep-0020/ | Python's design philosophy (`import this`) |
+| Using Python on Windows | https://docs.python.org/3/using/windows.html | The Python install manager (Day 3) |
+| VS Code: Python in VS Code | https://code.visualstudio.com/docs/python/python-tutorial | Setting up VS Code for Python (Day 3) |
 | Status of Python versions | https://devguide.python.org/versions/ | Which versions are supported |
-| The Python Language Reference | https://docs.python.org/3/reference/ | The specification of the language (Day 2) |
-| `dis`, the disassembler | https://docs.python.org/3/library/dis.html | Reading bytecode and the list of instructions |
+| The Python Language Reference | https://docs.python.org/3/reference/ | The specification of the language |
+| `dis`, the disassembler | https://docs.python.org/3/library/dis.html | Reading bytecode (Chapter 82) |
 | `ast` | https://docs.python.org/3/library/ast.html | Abstract syntax trees |
 | `tokenize` | https://docs.python.org/3/library/tokenize.html | The tokenizer |
 | `py_compile` | https://docs.python.org/3/library/py_compile.html | Making `.pyc` files |

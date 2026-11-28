@@ -13,7 +13,7 @@ Lecture notes and practical labs for my BSc (Hons) Cyber Security degree at Live
 
 | Course | Title | Lectures | Labs |
 | --- | --- | --- | --- |
-| Python | [Python Mastery](Python-Module/) (beginner to professional, self-paced) | 2 | 2 |
+| Python | [Python Mastery](Python-Module/) (beginner to professional, self-paced) | 3 | 3 |
 
 ## Folder layout
 

@@ -1,25 +1,14 @@
 # Day 2 examples
 
-Code from the lecture, one file per demo. Type each one yourself first, then compare.
+Code from Lecture 2. **Predict first** (which lines will appear?), then run each one.
 
-| File | Lecture demo |
-| --- | --- |
-| `ex01_which_python.py` | Demo 1 — Ask Python about itself |
-| `ex02_disassemble_print.py` | Demo 2 — Your first disassembly |
-| `ex03_compile_is_not_run.py` | Demo 3 — Compiling is not running |
-| `ex04_constant_folding.py` | Demo 4 — Constant folding |
-| `ex05_compile_then_exec.py` | Demo 5 — Compile, then run, by hand (ends with a deliberate `SyntaxError`) |
-| `ex06_print_dis_mistake.py` | Demo 6 — The stray `None` (deliberate mistake) |
-| `ex07_pipeline_target.py` | Demo 7 — Feed this file to `-m tokenize`, `-m ast` and `-m dis` |
-| `ex08_import_cache/main.py`, `greet.py` | Demo 8 — Importing creates a `__pycache__` |
-| `ex09_runtime_error_later.py` | Demo 9 — Python runs two lines, then fails (deliberate `NameError`) |
-| `java/Hello.java` | Demo 10 — Java bytecode with `javap -c` |
-| `java/Broken.java` | Demo 9 — `javac` refuses to compile (deliberate error) |
-| `c/hello.c` | Demo 11 — A native compile with `gcc` |
-| `ex10_fake_secret.py` | Demo 12 — A fake secret that survives compilation |
+| File | Lecture example | What happens |
+| --- | --- | --- |
+| `ex01_all_good.py` | Example 1 | All three lines appear |
+| `ex02_syntax_error_at_the_end.py` | Example 2 | Syntax error on line 3, so **no** output |
+| `ex03_misspelling_at_the_end.py` | Example 3 | Two lines appear, then a runtime error on line 3 |
+| `ex04_two_mistakes.py` | Example 4 | The syntax error on line 3 is reported before the misspelling on line 1 |
+| `ex05_wrong_order.py` | Example 5 | Logic error: no message, steps in the wrong order |
+| `ex06_wrong_text.py` | Example 6 | Logic error: a spelling mistake inside the quotes |
 
-Run any Python example from this folder with `python3 ex01_which_python.py` (or `py ex01_which_python.py` on Windows).
-
-The listings in the lecture come from Python 3.13. On 3.14 or newer, a few instruction names differ (for example `LOAD_SMALL_INT` instead of `RETURN_CONST`). That is expected: bytecode is version-specific.
-
-Generated files (`__pycache__/`, `*.class`, `hello.out`) are ignored by Git. Delete them whenever you like.
+Examples 2, 3 and 4 contain deliberate mistakes. Do not "fix" the files in this folder. Copy them into your own folder to experiment.

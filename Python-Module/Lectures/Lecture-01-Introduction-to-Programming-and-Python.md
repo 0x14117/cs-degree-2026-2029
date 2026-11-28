@@ -8,408 +8,267 @@
 | **Module** | 00 — Foundations |
 | **Chapter** | 1 — Introduction to Programming and Python |
 | **Day** | 1 |
-| **Lecture title** | What a program is, how Python runs one, and your first program |
-| **Prerequisites** | None. You need a computer and the ability to open a terminal. |
-| **Time** | About 2 hours to read and type the examples, then the lab |
-| **Code checked with** | Python 3.13.18 and Python 3.15 (pre-release build). Outputs shown are real outputs. |
+| **Today's one skill** | Making the computer show text on the screen with `print()` |
+| **Prerequisites** | None. You need a computer that has Python on it (an LJMU lab machine is fine). |
+| **Time** | About 1 hour to read and type the examples, then the lab |
+| **Code checked with** | Python 3.13 and Python 3.14. Every output shown is real. |
 
-### Learning objectives
+### What you will be able to do by the end
 
-By the end of this lecture you will be able to:
+1. Explain in plain words what a **program** is, and what an **algorithm** is.
+2. Explain why a computer needs **exact** instructions, **in the right order**.
+3. Say what Python is and why it is popular, especially in cyber security.
+4. Create a Python file and run it.
+5. Write programs that show text on the screen with `print()`.
+6. Use double quotes and single quotes correctly, including text that contains an apostrophe.
+7. Print blank lines, and draw simple banners and boxes out of text.
+8. Spot and fix the most common typing mistakes in a `print()` line.
 
-1. Explain in your own words what a **program**, an **algorithm** and a **programming language** are.
-2. Describe what a computer does when it runs a program (CPU, memory, input and output).
-3. Explain the difference between **machine code**, **assembly language** and **high-level languages**.
-4. Explain the difference between **compiling** and **interpreting**, and describe how Python runs your code.
-5. Say what Python is, who made it, and why it is used in industry and in cybersecurity.
-6. Run Python code in two ways: in the **interactive shell (REPL)** and from a **script file**.
-7. Write programs that display output with `print()`, including several values, `sep`, `end` and **escape sequences**.
-8. Write **comments** that explain code.
-9. Recognise the three kinds of error — **syntax errors**, **runtime errors** and **logic errors** — and read a basic **traceback**.
+### What today does NOT cover
 
-### Concepts covered
+You will see other people's Python code that uses numbers, maths, `sep`, `end`, backslash codes like `\n`, comments with `#`, and so on. **Ignore those for now.** Each one has its own day later in the course. Today is only about showing text.
 
-program · algorithm · source code · hardware · CPU · RAM · input/output · machine code · assembly · high-level language · compiler · interpreter · bytecode · Python Virtual Machine · CPython · REPL · script · statement · function · function call · argument · string · string literal · escape sequence · comment · syntax · syntax error · runtime error (exception) · traceback · logic error · bug · debugging
+### New words today
+
+program · algorithm · instruction · sequence · Python · source code · file · run · `print()` · brackets · quotes · string · blank line · error
 
 ---
 
 ## B. Introduction
 
-### What problem does programming solve?
+### What is programming?
 
-A computer is an extraordinarily fast machine that has no idea what you want. It can do billions of simple operations every second, but every one of those operations has to be described to it exactly. A **program** is that description: a precise, ordered set of instructions that tells a computer how to carry out a task.
+A computer is very fast, but it has no common sense. It cannot guess what you want. It does **exactly** what it is told, nothing more and nothing less.
 
-Programming is the skill of turning a task you understand ("work out the total of this receipt", "check this log file for failed logins", "tell me which devices on my network are switched on") into instructions so exact that a machine with no common sense can follow them.
+A **program** is a list of instructions that tells a computer what to do. **Programming** is writing those instructions.
 
-### Where is it used?
-
-Everywhere. The banking app on your phone, the Wi-Fi router in your house, the software that runs a hospital's appointments, the tools a security analyst uses to investigate an attack — all of these are programs that someone wrote.
+Every app on your phone, every website, the software in a Wi-Fi router, and every tool a security analyst uses is a program that somebody wrote.
 
 ### Why start with Python?
 
-Python is a language designed to be **readable**. Its code often looks close to plain English, so you can concentrate on *thinking like a programmer* instead of fighting punctuation. That does not make it a "toy" language. Python is one of the most widely used languages in the world, in web development, data science, artificial intelligence, automation and system administration — and it is the everyday language of cybersecurity. Well-known security tools such as Scapy (packet crafting), Volatility (memory forensics), Impacket (network protocols) and sqlmap (database testing) are written in Python, and analysts write small Python scripts every day to sort logs, check hashes and automate repetitive work.
+Python is a **programming language**: a set of words and rules for writing instructions that a computer can follow. Python was designed to be easy to read. Its code often looks close to English.
 
-> **If you know Java (from 4300COMP):** you have already seen these ideas — programs, statements, `System.out.println`, compile errors. Python does the same jobs with less ceremony. There is no class or `main` method required to print one line. Keep your Java knowledge, but do not assume Python behaves the same way. Where it differs, this course will say so.
+Python is not a "toy". It is one of the most used languages in the world, and it is used every day in cyber security. Analysts use it to search log files, check files for tampering and automate boring jobs. Many well-known security tools are written in Python.
+
+> **If you know some Java (from 4300COMP):** in Java, showing one line of text needs a class, a `main` method and `System.out.println(...)`. In Python it needs one line. Python and Java do the same kind of job, but Python has much less to type.
 
 ---
 
-## C. Detailed theoretical explanation
+## C. Explanation
 
-### C.1 Programs and algorithms
+### C.1 Instructions and algorithms
 
-An **algorithm** is a step-by-step method for solving a problem. It is an idea, and it does not belong to any language. A recipe is an algorithm. So are the directions you might give a friend to walk from Lime Street station to campus.
+An **algorithm** is a step-by-step method for doing a task. A recipe is an algorithm. Directions to campus are an algorithm.
 
-A **program** is an algorithm written in a **programming language** so that a computer can carry it out. The text you write is called **source code**.
-
-The key difference between giving instructions to a person and to a computer is **precision**. If you tell a friend "make me a cup of tea", they fill in a thousand missing details from common sense. A computer fills in nothing. Consider this algorithm:
+Here is an algorithm for making tea:
 
 ```text
 1. Boil the kettle.
 2. Put a tea bag in the cup.
-3. Pour water into the cup.
+3. Pour the water into the cup.
 4. Wait 3 minutes.
-5. Remove the tea bag.
+5. Take out the tea bag.
 ```
 
-A human follows this easily. A literal-minded machine has questions. Is there water in the kettle? Which cup? Pour *how much* water? Pour the boiled water from the kettle, or water from the tap? Programming is largely the work of answering those questions *before* the computer has to ask them. This is what "thinking like a programmer" means at its root: breaking a task into steps small and exact enough that nothing is left to guesswork.
+A person can follow this easily, because a person fills in the missing details. Is there water in the kettle? Which cup? Pour how much? A person just knows.
 
-Programs also run in order. Unless you tell it otherwise, a computer carries out instructions **one at a time, from top to bottom**. This idea is called **sequence**, and it is the first of the three building blocks of all programs. The other two, **selection** (making decisions) and **repetition** (loops), come in Part II.
+A computer does not know. It needs every detail spelled out. **Programming is mostly the job of making instructions exact enough for a machine that cannot guess.**
 
-### C.2 What a computer actually does
+When an algorithm is written in a programming language so a computer can follow it, it becomes a **program**.
 
-To understand what your program is asking for, you need a simple picture of the machine. (4301COMP Lecture 2 covers this in more depth.)
+### C.2 Order matters: sequence
 
-| Part | What it does | Analogy |
-| --- | --- | --- |
-| **CPU** (central processing unit) | Carries out instructions, one tiny step at a time, using the fetch–decode–execute cycle | The worker |
-| **RAM** (main memory) | Holds the program and its data *while it runs*. Fast, but cleared when power goes off | The worker's desk |
-| **Storage** (SSD or hard disk) | Holds files permanently, including your `.py` files | The filing cabinet |
-| **Input devices** | Keyboard, mouse, network card, sensors | Ways of telling the worker things |
-| **Output devices** | Screen, speakers, printer, network card | Ways the worker reports back |
+A computer follows a program's instructions **one at a time, from the top to the bottom**. This is called **sequence**.
 
-When you run a Python program, this happens:
+If the steps are in the wrong order, the computer still follows them, in the wrong order. Put "Pour the water" before "Boil the kettle" and you get cold tea. The computer will not notice. Only you will.
 
-1. Your source code file is read from **storage** into **RAM**.
-2. The Python interpreter (itself a program) processes it.
-3. The **CPU** carries out the resulting instructions.
-4. Results go to an **output device**. Today that means text on the screen.
-
-### C.3 Levels of programming language
-
-A CPU understands only one thing: **machine code**, which is patterns of binary digits (bits) that each mean a specific, very small operation, such as "add these two numbers" or "copy this value to that memory location". Each family of CPU (for example x86-64 in most laptops, ARM in most phones) has its own machine code.
-
-Writing machine code by hand is slow and error-prone, so languages were built on top of it:
-
-| Level | Example | Who reads it easily | Notes |
-| --- | --- | --- | --- |
-| Machine code | `10110000 01100001` | The CPU | Specific to one CPU family |
-| Assembly language | `mov al, 61h` | Specialists | One short word per machine instruction. Still CPU-specific |
-| High-level language | `print("Hello")` | People | One line may become hundreds of machine instructions. Works on many CPUs |
-
-Python is a **high-level language**. You describe *what* you want ("display this text") and software handles *how* the CPU does it. The cost is that something has to translate your high-level code into instructions the machine can run. There are two main strategies.
-
-### C.4 Compilers and interpreters
-
-A **compiler** translates the whole program into another form *before* it runs. A C compiler, for example, turns your C source into a machine-code file (an `.exe` on Windows) that the CPU runs directly. If there is a mistake in the grammar of your code, the compiler refuses to produce the file and nothing runs.
-
-An **interpreter** reads a program and carries it out *as it goes*, without first producing a separate machine-code file.
-
-Real languages often mix the two. You met one mix in Java: `javac` compiles your code to **bytecode** (a `.class` file), and the Java Virtual Machine runs that bytecode.
-
-Python, in its standard version, works in a similar mixed way, but you never see the compile step:
-
-```mermaid
-flowchart LR
-    A["Your source code<br/>hello.py"] --> B["Python compiler<br/>(checks grammar,<br/>builds bytecode)"]
-    B -->|grammar error| E["SyntaxError<br/>nothing runs"]
-    B --> C["Bytecode<br/>(simple instructions<br/>for a virtual machine)"]
-    C --> D["Python Virtual Machine<br/>runs bytecode<br/>one instruction at a time"]
-    D --> F["Output on screen"]
-    D -->|problem while running| G["Runtime error<br/>(exception + traceback)"]
-```
-
-When you type `python hello.py`:
-
-1. The Python program reads `hello.py`.
-2. It first **compiles** the whole file into **bytecode**. If any line breaks Python's grammar rules, it stops here with a `SyntaxError` and **not a single line runs**.
-3. The **Python Virtual Machine (PVM)** then executes the bytecode, one instruction at a time, top to bottom.
-4. If something goes wrong *while running* (for example, you use a name that does not exist), it stops at that point with a **runtime error**. Anything before that point has already happened.
-
-This explains one of the most useful facts in this lecture, which you will prove in the lab: **a syntax error anywhere stops the whole file from running, but a runtime error only stops the program when it is reached.**
-
-Because you never run a separate compile command, people call Python an **interpreted language**. That is a fair everyday description, as long as you know the bytecode step exists underneath.
-
-The standard Python you download from python.org is called **CPython**, because the interpreter itself is written in the C language. Other implementations exist (PyPy, for example), but CPython is what this course uses.
-
-### C.5 What Python is
+### C.3 What Python is
 
 | Fact | Detail |
 | --- | --- |
-| Creator | Guido van Rossum, in the Netherlands |
+| Made by | Guido van Rossum, in the Netherlands |
 | First released | 1991 |
-| Name | From the British comedy series *Monty Python's Flying Circus*, not the snake |
-| Python 3 | Released in 2008. It deliberately broke compatibility with Python 2 to fix design problems |
-| Python 2 | Officially ended on 1 January 2020. If a tutorial writes `print "hello"` without brackets, it is Python 2 and out of date |
-| Current versions | Python 3.15 was released on 9 October 2026. Python 3.14 is also still supported. This course works with any recent Python 3 |
-| Licence | Free and open source |
-| Philosophy | Readability counts. Type `import this` into Python to read "The Zen of Python" |
+| Name | Named after the British comedy show *Monty Python's Flying Circus*, not the snake |
+| The version you use | Python 3. (The old Python 2 ended in 2020. If a website writes `print "hello"` without brackets, it is Python 2 and out of date.) |
+| Cost | Free |
 
-Python's main traits, which you will understand properly over the coming weeks:
+### C.4 Your first program file
 
-- **Readable syntax.** Blocks of code are shown by indentation, not curly brackets.
-- **Interpreted** (via bytecode), so you can try code instantly.
-- **Dynamically typed.** You do not declare a variable's type in advance (Chapter 5).
-- **"Batteries included."** A large standard library comes with every installation (Chapter 50).
-- **Huge ecosystem** of free third-party packages.
+Python programs are saved in plain text files whose names end in **`.py`**. The text inside is called **source code**.
 
-### C.6 Two ways to run Python code
+To make and run your first program:
 
-#### Way 1: the interactive shell (REPL)
+1. Open a code editor. VS Code is recommended. (Day 3 shows how to set it up properly. Today, any plain text editor works. Do **not** use Word.)
+2. Create a new file called `hello.py`.
+3. Type this one line exactly:
 
-**REPL** stands for **Read–Eval–Print Loop**. It reads one line you type, evaluates (works out) it, prints the result, and loops back for the next line. It is perfect for quick experiments.
+   ```python
+   print("Hello, world!")
+   ```
 
-Open a terminal and type `python3` (macOS or Linux) or `py` (Windows). You will see something like:
+4. Save the file.
+5. Open a terminal in the same folder as the file, and type:
 
-```text
-Python 3.15.0 ...
-Type "help", "copyright", "credits" or "license" for more information.
->>>
-```
+   ```bash
+   python3 hello.py      # on macOS or Linux
+   python hello.py       # on Windows
+   ```
 
-The `>>>` is the **prompt**. Python is waiting for you. Try:
+6. Press Enter. You should see:
 
-```text
->>> 7 + 3
-10
->>> print("Hello")
-Hello
->>> "Hello"
-'Hello'
-```
+   ```text
+   Hello, world!
+   ```
 
-Notice two things. In the REPL, typing just `7 + 3` shows `10`, because the REPL *automatically* prints the value of whatever you type. And typing `"Hello"` shows it *with quotes*, because the REPL shows you the value as Python sees it, whereas `print()` shows it as a human should read it.
+Well done: that is a real program. To **run** a program means to tell the computer to carry out its instructions.
 
-To leave the REPL, type `exit()` and press Enter. (Ctrl+D also works on macOS and Linux, and Ctrl+Z then Enter on Windows.)
+> **If `python` or `python3` is not found:** your computer does not have Python yet, or the terminal cannot find it. Use an LJMU lab machine today. Day 3 covers installing Python on your own laptop step by step. On Windows, if `python` does not work, try `py`.
 
-#### Way 2: a script file
+> **The most common beginner problem:** forgetting to **save** before running. The terminal runs what is saved on the disk, not what you can see in the editor.
 
-A **script** is a text file of Python code ending in `.py`. You write it in an editor (VS Code, for example) and run it from the terminal:
+### C.5 The `print()` command
 
-```bash
-python3 hello.py      # macOS / Linux
-py hello.py           # Windows
-```
-
-The whole file runs from top to bottom, and then the program ends.
-
-**Important difference:** a script does *not* automatically print values. A line containing only `7 + 3` in a script is worked out and then thrown away. Nothing appears. In a script, if you want to see something, you must `print()` it. This catches out many beginners who test in the REPL and then wonder why their script is silent.
-
-| | REPL | Script |
-| --- | --- | --- |
-| Good for | Quick experiments, checking how something behaves | Real programs you save, rerun and share |
-| Saved? | No. Gone when you exit | Yes, a `.py` file |
-| Shows values automatically? | Yes | No. Use `print()` |
-
-> **Getting Python running today.** Full installation and VS Code setup is Chapter 3. For today you only need *some* working Python 3. In a terminal, type `python3 --version` (or `py --version` on Windows). If you see `Python 3.something`, you are ready. If not, install the latest version from https://www.python.org/downloads/ (on Windows, tick **"Add python.exe to PATH"** in the installer), or use the Python on the LJMU lab machines.
-
-### C.7 Your first function: `print()`
-
-A **statement** is a single complete instruction, usually one line. Our first statement is:
+`print()` is Python's command for showing something on the screen. Look closely at each part:
 
 ```python
 print("Hello, world!")
 ```
 
-Let's take this apart piece by piece, because every part matters.
-
-| Part | Name | Meaning |
+| Part | What it is | What it does |
 | --- | --- | --- |
-| `print` | a **function** name | A named, ready-made piece of code that does a job. `print`'s job is to display text |
-| `( )` | brackets (parentheses) | Writing brackets after a function name **calls** it, which means "run it now" |
-| `"Hello, world!"` | an **argument** | The value you hand to the function to work on |
-| `"…"` | quotation marks | Mark the start and end of a **string**, a piece of text |
+| `print` | The name of the command | Tells Python "show something on the screen" |
+| `(` and `)` | Round brackets | Hold the thing you want to show. Every `(` needs a `)` |
+| `"` and `"` | Quotation marks | Mark where the text starts and where it ends |
+| `Hello, world!` | The text | What appears on the screen |
 
-So the statement reads: *"Call the `print` function, giving it the text `Hello, world!`."* The function displays the text and moves the cursor to a new line.
+So `print("Hello, world!")` means: **"Show the text Hello, world! on the screen."**
 
-`print` is a **built-in function**: it comes with Python and is always available. You will meet many more built-in functions, and in Part IV you will write your own.
+After it shows the text, `print()` moves to a **new line**. That is why the next `print()` appears underneath.
 
-#### Strings and string literals
+Some extra words you will hear:
 
-A **string** is a sequence of characters: letters, digits, spaces, symbols. When you write text directly in your code between quotes, that is a **string literal** ("literal" because it is literally the value, typed out).
+- `print` is called a **function**: a ready-made command that does a job. Python has many of them. You will learn about functions properly much later.
+- Using a function, by writing its name and brackets, is called **calling** it.
+- A piece of text inside quotes is called a **string**. (It is a "string" of characters, like beads on a string.)
 
-Python accepts single or double quotes. They mean exactly the same thing:
+You do not need to remember these words yet. You will hear them every day, and they will become natural.
+
+### C.6 Several lines: one `print()` per line
+
+To show three lines, write three `print()` lines. Python runs them in sequence, top to bottom:
+
+```python
+print("My name is Afaq.")
+print("I study Cyber Security.")
+print("Today I start Python.")
+```
+
+```text
+My name is Afaq.
+I study Cyber Security.
+Today I start Python.
+```
+
+### C.7 Double quotes and single quotes
+
+Python accepts **double quotes** `"..."` or **single quotes** `'...'`. They do exactly the same job:
 
 ```python
 print("Hello")
 print('Hello')
 ```
 
-Pick one style and use it consistently. This course uses double quotes, which is also what popular formatting tools default to. The choice matters when your text itself contains a quote mark: use the *other* kind on the outside.
+Both show `Hello`. The rule is: **the quote at the start and the quote at the end must be the same kind.**
+
+This course uses double quotes, because most Python programmers do.
+
+The choice matters when your text itself contains a quote mark:
+
+| You want to show | Write it like this | Why |
+| --- | --- | --- |
+| `It's Day 1.` | `print("It's Day 1.")` | The apostrophe is a single quote, so wrap the text in double quotes |
+| `My tutor said "type it".` | `print('My tutor said "type it".')` | The text has double quotes, so wrap it in single quotes |
+
+If you use the same kind inside and outside, Python thinks the text has ended early, and you get an error. You will see this in the lab.
+
+### C.8 Python shows the text exactly
+
+Everything between the quotes is shown **exactly as you typed it**: capital letters, small letters, spaces, punctuation.
 
 ```python
-print("It's Day 1")          # apostrophe inside double quotes: fine
-print('She said "go"')       # double quotes inside single quotes: fine
-```
-
-#### Text versus numbers
-
-Quotes change everything. Compare:
-
-```python
-print("7 + 3")    # a string: shown exactly as written
-print(7 + 3)      # a calculation: Python works it out first, then prints the result
-```
-
-Output:
-
-```text
-7 + 3
-10
-```
-
-Without quotes, `7 + 3` is an **expression**: something Python evaluates to produce a value. Python works it out *first*, and then `print` receives the result, `10`. Day 1 uses the four basic arithmetic operators: `+`, `-`, `*` (multiply) and `/` (divide). Chapter 7 covers numbers properly. One thing to notice now: `/` always gives a result with a decimal point, so `7 / 2` is `3.5` and `10 / 2` is `5.0`, not `5`.
-
-#### Printing several values at once
-
-You can give `print` several arguments, separated by commas. It prints them in order with **one space between each**:
-
-```python
-print("Day", 1, "of the course")
+print("hello")
+print("HELLO")
+print("   hello   with spaces")
+print("Hello!!! ???")
 ```
 
 ```text
-Day 1 of the course
+hello
+HELLO
+   hello   with spaces
+Hello!!! ???
 ```
 
-Notice that you did not type the spaces around `1`. `print` added them. This is the easiest way to mix text and numbers on one line.
+Python does not fix your spelling, add full stops or remove extra spaces. If you want something on the screen, you must type it inside the quotes.
 
-#### Two optional settings: `sep` and `end`
+### C.9 Blank lines
 
-`print` has settings you can change by name. Two are useful from day one:
-
-- **`sep`** (separator) is what goes *between* the values. The default is one space, `" "`.
-- **`end`** is what goes *after* the last value. The default is `"\n"`, a new line. That default is why each `print` normally starts a fresh line.
+`print()` with nothing inside the brackets shows an **empty line**. Use it to space out your output, like paragraphs:
 
 ```python
-print("2026", "11", "27", sep="-")
-print("Loading", end="")
-print("...", end="")
-print(" done")
+print("Part 1")
+print()
+print("Part 2")
 ```
 
 ```text
-2026-11-27
-Loading... done
+Part 1
+
+Part 2
 ```
 
-Line 1 puts `-` between the values instead of a space. Lines 2 and 3 end with *nothing* instead of a new line, so the next `print` continues on the same line. Line 4 uses the normal `end`, so the line finishes.
+### C.10 Drawing with text
 
-These named settings are called **keyword arguments**. You will study them properly in Chapter 42. For now, remember the pattern: `sep=` and `end=` go after the values, separated by commas.
-
-A `print()` with nothing in the brackets prints just the `end`, which is a new line, so it gives you a **blank line**.
-
-#### Escape sequences
-
-Some characters are hard or impossible to type inside a string: a new line, a tab, or a quote mark of the same kind as the surrounding quotes. Python uses the **backslash** `\` to start an **escape sequence**, a two-character code that stands for one special character.
-
-| Escape | Means | Example code | Shows |
-| --- | --- | --- | --- |
-| `\n` | new line | `"one\ntwo"` | `one` then `two` on the next line |
-| `\t` | tab (jump to the next tab stop) | `"Name:\tAfaq"` | `Name:   Afaq` |
-| `\"` | a double quote | `"say \"hi\""` | `say "hi"` |
-| `\'` | a single quote | `'It\'s'` | `It's` |
-| `\\` | one real backslash | `"C:\\Temp"` | `C:\Temp` |
-
-The last row matters on Windows, where file paths contain backslashes. In the lab you will see what goes wrong when you forget it.
-
-#### Strings over several lines: triple quotes
-
-Three quote marks (`"""` or `'''`) start a string that can run over several lines, keeping the line breaks exactly as typed:
+Because `print()` shows characters exactly, you can draw boxes, lines and banners with characters such as `+`, `-`, `|`, `=` and `*`:
 
 ```python
-print("""+----------------------+
+print("+----------------------+")
+print("|   PYTHON MASTERY     |")
+print("+----------------------+")
+```
+
+```text
++----------------------+
 |   PYTHON MASTERY     |
-+----------------------+""")
++----------------------+
 ```
 
-#### Repeating a string with `*`
-
-One small preview from Chapter 8, because it makes output tidy: a string times a whole number repeats the string.
-
-```python
-print("=" * 30)
-```
-
-That prints 30 equals signs. It is far easier than typing them, and far easier to change.
-
-### C.8 Comments
-
-A **comment** is a note for humans. Python ignores it completely. A comment starts with `#` and runs to the end of that line.
-
-```python
-# Print a greeting for the user.
-print("Hello!")            # a comment can also follow code on the same line
-```
-
-Comments exist because code is read far more often than it is written: by your future self, by teammates, by markers. Good comments explain **why** something is done, or give context the code cannot. They should not repeat what the code obviously says.
-
-```python
-print("=" * 30)   # BAD:  prints 30 equals signs   (the code already says that)
-print("=" * 30)   # GOOD: divider must match the receipt printer's 30-character width
-```
-
-Programmers also **comment out** a line, putting `#` in front so it stops running without deleting it. This is a quick, useful debugging technique.
-
-### C.9 When things go wrong: three kinds of error
-
-Every programmer makes mistakes constantly. Professionals are not people who make no errors. They are people who find and fix them quickly. A mistake in a program is called a **bug**, and finding and fixing it is **debugging**.
-
-There are three kinds of error, and telling them apart is the first debugging skill.
-
-| Kind | When it is detected | Does any code run? | Example |
-| --- | --- | --- | --- |
-| **Syntax error** | Before the program starts, when Python compiles the file | **No.** Nothing runs at all | A missing bracket or quote |
-| **Runtime error** (exception) | While the program is running, when Python reaches the bad line | **Yes**, every line *before* the error runs | Using a name that doesn't exist |
-| **Logic error** | Never, by Python. Only you can spot it | **Yes**, all of it, with no message | Adding when you meant to multiply |
-
-**Syntax** means the grammar rules of the language. A syntax error is like a sentence with a missing full stop: Python cannot even work out what you meant.
-
-A **runtime error** means the code was grammatically fine, but something impossible was asked for at the moment it ran. Python calls these **exceptions**, and reports them with a **traceback**.
-
-A **logic error** is the most dangerous kind, because nothing tells you about it. The program runs happily and gives the wrong answer. The only defence is to **check your output against what you expected**, which is why this course keeps asking you to predict output before you run.
+The trick is to count characters so the sides line up. Every line in this box is exactly 24 characters wide.
 
 ---
 
-## D. Syntax and programming rules for today
+## D. Rules for today
 
-1. **One statement per line.** Python ends a statement at the end of the line.
-2. **No leading spaces at the start of a line** (for now). In Python, indentation has meaning: it marks blocks of code, which you will meet in Part II. A stray space at the start of a top-level line causes `IndentationError: unexpected indent`.
-3. **Python is case-sensitive.** `print`, `Print` and `PRINT` are three different names, and only `print` exists.
-4. **Brackets come in pairs.** Every `(` needs a matching `)`.
-5. **Quotes come in pairs, of the same kind.** `"Hello"` or `'Hello'`, never `"Hello'`.
-6. **Use straight quotes** `"` `'`, never the curly “smart quotes” that word processors insert. Write code in a code editor, not in Word.
-7. **Separate multiple arguments with commas:** `print("a", "b")`.
-8. **Keyword arguments go last:** `print("a", "b", sep="-")`, not `print(sep="-", "a", "b")`.
-9. **File names:** lowercase, words joined by underscores, ending in `.py`, for example `ex01_hello.py`. Avoid spaces, and never name a file after something built in, such as `print.py`.
+1. **Write `print` in small letters.** Python cares about capitals. `Print` and `PRINT` do not exist.
+2. **Brackets come in pairs:** `print(` ... `)`.
+3. **Quotes come in pairs of the same kind:** `"..."` or `'...'`, never `"...'`.
+4. **One `print()` per line.**
+5. **Start every line at the very left edge.** No spaces before `print`. (Spaces at the start of a line have a special meaning in Python, which you will learn later.)
+6. **Use straight quotes** `"` and `'`, not curly “smart quotes” from Word or some phone keyboards. Write code in a code editor.
+7. **Name files** in small letters, with underscores instead of spaces, ending in `.py`. For example: `ex01_hello.py`.
+8. **Save before you run.**
 
 ---
 
-## E. Code demonstrations
+## E. Examples
 
-All of these are in the [`Examples/Lecture-01/`](../Examples/Lecture-01/) folder. **Type them yourself first**, then compare with the file.
+All examples are in [`Examples/Lecture-01/`](../Examples/Lecture-01/). **Type each one yourself first**, run it, and only then compare it with the file.
 
-### Demo 1 — Hello, world (`Examples/Lecture-01/ex01_hello.py`)
+### Example 1 — Hello, world (`ex01_hello.py`)
 
 ```python
-# ex01_hello.py
-# The traditional first program: display one line of text.
 print("Hello, world!")
 ```
-
-**Line by line**
-
-- Lines 1–2 are comments: the file name and its purpose. Python skips them.
-- Line 3 calls `print` with one string argument.
 
 **Output**
 
@@ -417,132 +276,104 @@ print("Hello, world!")
 Hello, world!
 ```
 
-**Why:** `print` displays its argument without the quotes, then ends the line.
+**Why:** `print` shows the text between the quotes. The quotes themselves are not shown. They only mark where the text starts and ends.
 
-### Demo 2 — Sequence (`Examples/Lecture-01/ex02_several_lines.py`)
+### Example 2 — Three lines (`ex02_three_lines.py`)
 
 ```python
-# ex02_several_lines.py
-# Statements run one after another, from top to bottom.
-print("Welcome to Python Mastery.")
-print("Day 1: Introduction to Programming and Python.")
+print("My name is Afaq.")
+print("I study Cyber Security.")
+print("Today I start Python.")
+```
+
+**Output**
+
+```text
+My name is Afaq.
+I study Cyber Security.
+Today I start Python.
+```
+
+**Step by step** (this is called a **trace**: following the program one line at a time):
+
+| Step | Line run | What appears |
+| --- | --- | --- |
+| 1 | Line 1 | `My name is Afaq.` |
+| 2 | Line 2 | `I study Cyber Security.` underneath |
+| 3 | Line 3 | `Today I start Python.` underneath |
+| 4 | No more lines | The program ends |
+
+### Example 3 — Quotes (`ex03_quotes.py`)
+
+```python
+print("This uses double quotes.")
+print('This uses single quotes.')
+print("It's Day 1.")
+print('My tutor said "type every line".')
+```
+
+**Output**
+
+```text
+This uses double quotes.
+This uses single quotes.
+It's Day 1.
+My tutor said "type every line".
+```
+
+**Why:** lines 1 and 2 show that both kinds of quote work. Line 3 has an apostrophe in the text, so the outside quotes are double. Line 4 has double quotes in the text, so the outside quotes are single.
+
+### Example 4 — Exactly as typed (`ex04_exact_text.py`)
+
+```python
+print("hello")
+print("HELLO")
+print("   hello   with spaces")
+print("Hello!!! ???")
+```
+
+**Output**
+
+```text
+hello
+HELLO
+   hello   with spaces
+Hello!!! ???
+```
+
+**Why:** spaces **inside** the quotes are part of the text, so they are kept. That is different from a space **before** `print`, which is not allowed (rule 5).
+
+### Example 5 — Blank lines (`ex05_blank_lines.py`)
+
+```python
+print("Part 1")
 print()
-print("Let's begin.")
+print("Part 2")
+print()
+print()
+print("Part 3")
 ```
 
 **Output**
 
 ```text
-Welcome to Python Mastery.
-Day 1: Introduction to Programming and Python.
+Part 1
 
-Let's begin.
+Part 2
+
+
+Part 3
 ```
 
-**Execution trace.** A trace follows the program one step at a time, which is how you should learn to read code:
+**Why:** each empty `print()` gives one empty line. Two of them give two empty lines.
 
-| Step | Line | What happens | Screen so far |
-| --- | --- | --- | --- |
-| 1 | 1–2 | Comments, skipped | (empty) |
-| 2 | 3 | Prints the welcome text, then a new line | `Welcome to Python Mastery.` |
-| 3 | 4 | Prints the Day 1 line, then a new line | …plus `Day 1: …` |
-| 4 | 5 | `print()` with no arguments prints only a new line, giving a blank line | …plus a blank line |
-| 5 | 6 | Prints `Let's begin.` The apostrophe is fine inside double quotes | …plus `Let's begin.` |
-| 6 | end | No more lines, so the program ends | |
-
-### Demo 3 — Several values, `sep` and `end` (`Examples/Lecture-01/ex03_print_options.py`)
+### Example 6 — A banner (`ex06_banner.py`)
 
 ```python
-# ex03_print_options.py
-# print() can take several values, and two optional settings: sep and end.
-print("Module:", "Python Mastery")
-print("Day", 1, "of the course")
-print("2026", "11", "27", sep="-")
-print("Loading", end="")
-print("...", end="")
-print(" done")
-```
-
-**Output**
-
-```text
-Module: Python Mastery
-Day 1 of the course
-2026-11-27
-Loading... done
-```
-
-**Why**
-
-- Line 3: two strings, so `print` puts a space between them.
-- Line 4: a string, the number `1` and another string. `print` can mix them, spacing them automatically.
-- Line 5: `sep="-"` replaces the spaces with hyphens.
-- Lines 6–8: the first two use `end=""` so no new line is added. All three pieces land on one line. Notice that `" done"` has its own leading space, because nothing else adds one.
-
-**Common mistake:** `print("Loading", end=" ")` with a space and then `print("...")` gives `Loading ...`, with a space you may not want. `end` adds *exactly* what you give it.
-
-### Demo 4 — Text versus numbers (`Examples/Lecture-01/ex04_text_versus_numbers.py`)
-
-```python
-# ex04_text_versus_numbers.py
-# Text in quotes is shown exactly. A calculation without quotes is worked out first.
-print("7 + 3")
-print(7 + 3)
-print("7 + 3 =", 7 + 3)
-print(10 - 4)
-print(6 * 7)
-print(7 / 2)
-```
-
-**Output**
-
-```text
-7 + 3
-10
-7 + 3 = 10
-6
-42
-3.5
-```
-
-**Why:** line 5 combines both ideas. The first argument is a string, shown as is, and the second is an expression, worked out to `10`. This "label, then calculated value" pattern is very common.
-
-### Demo 5 — Escape sequences (`Examples/Lecture-01/ex05_escape_sequences.py`)
-
-```python
-# ex05_escape_sequences.py
-# A backslash starts an escape sequence: a code for a character that is hard to type.
-print("Line one\nLine two")
-print("Name:\tAfaq")
-print("Course:\tCyber Security")
-print("She said \"hello\" to me.")
-print('It\'s working.')
-print("A Windows path: C:\\Users\\afaq")
-```
-
-**Output**
-
-```text
-Line one
-Line two
-Name:	Afaq
-Course:	Cyber Security
-She said "hello" to me.
-It's working.
-A Windows path: C:\Users\afaq
-```
-
-**Why:** one string with `\n` produces two lines of output. `\t` jumps to the next tab stop, which lines up `Afaq` and `Cyber Security`. `\"` and `\'` put quote marks inside strings that use the same quotes. `\\` produces one real backslash.
-
-### Demo 6 — Triple quotes (`Examples/Lecture-01/ex06_triple_quotes.py`)
-
-```python
-# ex06_triple_quotes.py
-# Triple quotes let one string run over several lines.
-print("""+----------------------+
-|   PYTHON MASTERY     |
-|   Day 1              |
-+----------------------+""")
+print("+----------------------+")
+print("|   PYTHON MASTERY     |")
+print("|   Day 1              |")
+print("+----------------------+")
 ```
 
 **Output**
@@ -554,298 +385,159 @@ print("""+----------------------+
 +----------------------+
 ```
 
-One `print`, one string, four lines. The line breaks inside the triple quotes are part of the string.
+**Why it lines up:** every line has exactly 24 characters, counting spaces. If one line is a character short, its right-hand `|` moves left. Try it.
 
-### Demo 7 — Comments (`Examples/Lecture-01/ex07_comments.py`)
+### Example 7 — Order matters (`ex07_order_matters.py`)
 
 ```python
-# ex07_comments.py
-# Everything after a hash on a line is a comment. Python ignores it.
-
-# Print a greeting for the user.
-print("Hello!")            # a comment can also sit at the end of a line
-
-# print("This line is switched off, so it never runs.")
-print("Goodbye!")
+print("3. Pour the water")
+print("1. Boil the kettle")
+print("2. Put a tea bag in the cup")
 ```
 
 **Output**
 
 ```text
-Hello!
-Goodbye!
+3. Pour the water
+1. Boil the kettle
+2. Put a tea bag in the cup
 ```
 
-The commented-out `print` on line 7 never runs. Blank lines are ignored too, and you should use them to separate sections of code.
+**Why:** Python does not read the numbers. It runs the lines from top to bottom, so the steps come out in the wrong order. There is no error message. The program did exactly what it was told. To fix it, move the lines into the right order.
 
-### Demo 8 — A syntax error stops everything (`Examples/Lecture-01/ex08_syntax_error.py`)
+### Example 8 — A real-looking welcome screen (`ex08_welcome_screen.py`)
 
 ```python
-# ex08_syntax_error.py
-# DELIBERATE ERROR: the closing bracket is missing on line 4.
-print("This line is fine.")
-print("This line is broken."
-print("This line is fine too.")
-```
-
-**Output** (the folder path will differ on your computer)
-
-```text
-  File ".../ex08_syntax_error.py", line 4
-    print("This line is broken."
-         ^
-SyntaxError: '(' was never closed
-```
-
-**Look carefully at what is missing:** `This line is fine.` was **not** printed, even though line 3 is perfect. Python compiles the whole file before running any of it, finds the grammar problem, and refuses to start.
-
-**Reading the message**
-
-- `File "...", line 4` tells you where Python noticed the problem.
-- The next line shows that line of code, and `^` points at the spot.
-- `SyntaxError: '(' was never closed` says what is wrong.
-
-**Fix:** add the closing `)` to line 4.
-
-> **Tip:** the line Python reports is where it *noticed* the problem, which is sometimes *after* the real mistake. If the reported line looks fine, check the line above it.
-
-### Demo 9 — A runtime error stops at that line (`Examples/Lecture-01/ex09_name_error.py`)
-
-```python
-# ex09_name_error.py
-# DELIBERATE ERROR: Python is case-sensitive. There is no built-in called Print.
-print("Before the mistake.")
-Print("Hello")
-print("After the mistake.")
-```
-
-**Output**
-
-```text
-Before the mistake.
-Traceback (most recent call last):
-  File ".../ex09_name_error.py", line 4, in <module>
-    Print("Hello")
-    ^^^^^
-NameError: name 'Print' is not defined. Did you mean: 'print'?
-```
-
-**Compare with Demo 8.** This time the first line *did* print. The grammar is fine (`Print("Hello")` is a correctly formed function call), so the program started. It ran line 3, then reached line 4, looked for something called `Print`, found nothing, and stopped. Line 5 never ran.
-
-**Reading a traceback.** Read it from the **bottom up**:
-
-1. **Last line:** the error **type** (`NameError`) and a message. Modern Python even suggests the fix.
-2. **Above it:** the file, the line number (`line 4`) and the line of code, with `^^^^^` under the problem.
-3. `in <module>` means "in the main part of the file", not inside a function.
-4. `Traceback (most recent call last):` is the heading. You will see longer tracebacks once you write functions.
-
-### Demo 10 — Joining text and a number with `+` (`Examples/Lecture-01/ex10_type_error.py`)
-
-```python
-# ex10_type_error.py
-# DELIBERATE ERROR: + cannot join a piece of text and a number.
-print("Age: " + 20)
-```
-
-**Output**
-
-```text
-Traceback (most recent call last):
-  File ".../ex10_type_error.py", line 3, in <module>
-    print("Age: " + 20)
-          ~~~~~~~~^~~~
-TypeError: can only concatenate str (not "int") to str
-```
-
-**Why:** `+` between two strings joins them (this is called **concatenation**), and `+` between two numbers adds them. Between a string and a number, Python will not guess which you meant, so it raises a `TypeError`. `str` is Python's name for the string type and `int` its name for whole numbers (integers).
-
-**Two corrected versions**
-
-```python
-print("Age:", 20)       # let print() put them side by side, spaced
-print("Age: " + "20")   # make both strings, so + joins them
-```
-
-> **If you know Java:** Java happily converts the number for you in `"Age: " + 20`. Python deliberately does not. This is one of the first places the two languages differ.
-
-### Demo 11 — A logic error (`Examples/Lecture-01/ex11_logic_error.py`)
-
-```python
-# ex11_logic_error.py
-# DELIBERATE LOGIC ERROR: the program runs, but the answer is wrong.
-# The area of a 3 by 4 rectangle is 3 * 4 = 12, not 3 + 4.
-print("Area of a 3 by 4 rectangle:", 3 + 4)
-```
-
-**Output**
-
-```text
-Area of a 3 by 4 rectangle: 7
-```
-
-No error message at all. The program ran perfectly and the answer is wrong. Python did exactly what was written, not what was meant. The fix is `3 * 4`, but you only find it by **knowing what answer to expect**.
-
-### Demo 12 — A small realistic program (`Examples/Lecture-01/ex12_receipt.py`)
-
-```python
-# ex12_receipt.py
-# A small, realistic program that uses only what Day 1 teaches.
-print("=" * 30)
-print("      CAMPUS CAFE RECEIPT")
-print("=" * 30)
-print("Coffee\t\t£", 2.50)
-print("Sandwich\t£", 3.75)
-print("-" * 30)
-print("Total\t\t£", 2.50 + 3.75)
-print("=" * 30)
-print("Thank you!")
+print("==============================")
+print("   LJMU CYBER SECURITY LAB")
+print("==============================")
+print()
+print("Welcome to lab machine 07.")
+print("Log in with your university account.")
+print()
+print("Unauthorised access is not allowed.")
+print("==============================")
 ```
 
 **Output**
 
 ```text
 ==============================
-      CAMPUS CAFE RECEIPT
+   LJMU CYBER SECURITY LAB
 ==============================
-Coffee		£ 2.5
-Sandwich	£ 3.75
-------------------------------
-Total		£ 6.25
+
+Welcome to lab machine 07.
+Log in with your university account.
+
+Unauthorised access is not allowed.
 ==============================
-Thank you!
 ```
 
-**Things to notice**
-
-- `"=" * 30` builds a 30-character line, used three times.
-- Tabs line up the prices. `Coffee` needs two tabs and `Sandwich` one, because `Sandwich` is longer.
-- **`2.50` printed as `2.5`.** Python stores the *number* 2.5. The trailing zero was only how you typed it. For money you want two decimal places, which needs **f-strings** (Chapter 8). Spotting when output is "technically right but not what a user expects" is part of thinking like a programmer.
-- There is a space between `£` and the number because `print` separates its arguments with a space.
+Real systems show screens like this when you log in. Today you can only *display* them. In later chapters you will make them respond to what the user types.
 
 ---
 
-## F. Visual summary: what happens when you run a script
+## F. Picture: what happens when you run a file
 
 ```mermaid
 flowchart TD
-    S([python3 my_program.py]) --> R[Read the whole file]
-    R --> C{Grammar OK?}
-    C -- No --> SE[SyntaxError shown<br/>NO lines run]
-    C -- Yes --> L[Run next line]
-    L --> P{Problem while<br/>running this line?}
-    P -- Yes --> RE[Traceback shown<br/>program stops here<br/>earlier output stays]
-    P -- No --> M{More lines?}
-    M -- Yes --> L
-    M -- No --> E([Program ends normally])
+    A["You type: python hello.py"] --> B["Python opens hello.py"]
+    B --> C["Runs line 1"]
+    C --> D["Runs line 2"]
+    D --> E["...and so on, top to bottom"]
+    E --> F["No more lines: program ends"]
 ```
 
-A logic error does not appear on this chart at all. The program follows the happy path to the end, and the only sign of trouble is output that is wrong.
+Day 2 looks at what really happens inside that box called "Python".
 
 ---
 
 ## G. Common mistakes
 
-| Mistake | What you see | Why it happens | Fix |
+You do not need to understand these messages fully yet. Day 2 explains them. For now, learn to **recognise** them and check your spelling, brackets and quotes.
+
+| You typed | What you see | What is wrong | Fix |
 | --- | --- | --- | --- |
-| `Print("Hi")` | `NameError: name 'Print' is not defined` | Python is case-sensitive | `print` in lowercase |
-| `print("Hi"` | `SyntaxError: '(' was never closed` | Missing `)` | Close every bracket |
-| `print("Hi)` | `SyntaxError: unterminated string literal` | Missing closing quote | Close every string |
-| `print("Hi')` | `SyntaxError: unterminated string literal` | Quotes don't match | Use the same quote at both ends |
-| `print(“Hi”)` | `SyntaxError: invalid character '“' (U+201C)` | Curly quotes pasted from a document | Retype with straight quotes, in a code editor |
-| `print "Hi"` | `SyntaxError: Missing parentheses in call to 'print'` | Python 2 style from an old tutorial | `print("Hi")` |
-| A space before `print` | `IndentationError: unexpected indent` | Indentation has meaning in Python | Start top-level lines at column 1 |
-| `print("Total: " + 5)` | `TypeError: can only concatenate str (not "int") to str` | `+` can't join text and a number | `print("Total:", 5)` |
-| `7 + 3` alone in a script | Nothing appears | Only the REPL auto-displays values | `print(7 + 3)` |
-| `print("C:\notes")` | `C:` then `otes` on a new line | `\n` is an escape for a new line | `"C:\\notes"` |
-| Running a file you haven't saved | Old output, or the old error | The terminal runs what is on disk | Save (Ctrl+S) before every run |
+| `Print("Hi")` | `NameError: name 'Print' is not defined. Did you mean: 'print'?` | Capital P | `print` in small letters |
+| `prnt("Hi")` | `NameError: name 'prnt' is not defined. Did you mean: 'print'?` | Spelling | Spell it `print` |
+| `print("Hi"` | `SyntaxError: '(' was never closed` | Missing `)` | Add `)` at the end |
+| `print("Hi"))` | `SyntaxError: unmatched ')'` | One `)` too many | Remove one `)` |
+| `print("Hi)` | `SyntaxError: unterminated string literal` | Missing closing quote | Add `"` before `)` |
+| `print("Hi')` | `SyntaxError: unterminated string literal` | Quotes do not match | Use the same kind at both ends |
+| `print('It's broken')` | `SyntaxError: unterminated string literal` | The apostrophe ends the text early | Use double quotes outside: `"It's broken"` |
+| `print("She said "hi" to me")` | `SyntaxError: invalid syntax...` | The inner `"` ends the text early | Use single quotes outside |
+| `print(Hi)` | `NameError: name 'Hi' is not defined` | No quotes, so Python thinks `Hi` is a name, not text | Add quotes: `print("Hi")` |
+| `print "Hi"` | `SyntaxError: Missing parentheses in call to 'print'` | Old Python 2 style | `print("Hi")` |
+| `print(“Hi”)` | `SyntaxError: invalid character '“' (U+201C)` | Curly quotes from Word or a phone | Retype with straight quotes in a code editor |
+| ` print("Hi")` (space at start) | `IndentationError: unexpected indent` | A space before `print` | Start at the left edge |
+| (forgot to save) | Old output, or an old error | The terminal runs the saved file | Save, then run |
+
+> The exact wording after `invalid syntax` can differ between Python versions. Python 3.13 says `Perhaps you forgot a comma?` and Python 3.14 says `Is this intended to be part of the string?`. Both mean "the quotes are confused".
 
 ---
 
-## H. Best practices from day one
+## H. Good habits from day one
 
-1. **Type code, don't paste it.** Typing builds the muscle memory of syntax, and you notice details.
-2. **Predict, then run.** Before running, write down what you expect. Every mismatch teaches you something.
-3. **Change one thing at a time.** Then run again. If it breaks, you know exactly what caused it.
-4. **Read the whole error message, bottom line first.** It almost always tells you the line and the problem.
-5. **Start every file with a short comment** saying what it is and what it does.
-6. **Use blank lines** to separate parts of a program, as you would use paragraphs.
-7. **Be consistent with quotes.** This course uses double quotes.
-8. **Name files clearly**: `ex07_separator.py`, not `test2final_REAL.py`.
-9. **Break things on purpose.** Deliberately introducing errors and reading what Python says is the fastest way to learn its messages. Every lab includes this.
-10. **Commit your work** to Git at the end of each session.
+1. **Type the code yourself.** Do not copy and paste. Typing is how you learn where the brackets and quotes go.
+2. **Predict, then run.** Before you run, say what you expect to see. If the real output is different, find out why.
+3. **Change one thing at a time**, then run again.
+4. **Read the last line of an error message first.** It usually tells you what is wrong.
+5. **Break things on purpose.** Remove a bracket, run it, and read the message. Then you will recognise it next time.
+6. **Use blank lines in your output** to make it easy to read.
 
 ---
 
-## I. Lecture summary
+## I. Summary
 
-- A **program** is an exact, ordered set of instructions. An **algorithm** is the method behind it, independent of any language.
-- Computers run instructions in **sequence**, top to bottom, unless told otherwise.
-- The **CPU** executes, **RAM** holds the running program, **storage** keeps files, and **I/O devices** communicate.
-- CPUs only understand **machine code**. **High-level languages** like Python are translated for them.
-- **Compilers** translate a whole program before it runs, and **interpreters** carry it out as they go. Standard Python (**CPython**) compiles your file to **bytecode** and runs that bytecode on the **Python Virtual Machine**.
-- Run Python interactively in the **REPL** (`>>>`) for experiments, or as a **script** (`python3 file.py`) for real programs. Only the REPL shows values automatically.
-- `print()` displays values. It puts `sep` (default: a space) between values and `end` (default: a new line) after them.
-- **Strings** are text in matching quotes. **Escape sequences** (`\n`, `\t`, `\"`, `\'`, `\\`) represent special characters. **Triple quotes** allow strings over several lines.
-- **Comments** start with `#` and are ignored by Python. They are for people.
-- **Syntax errors** stop the whole file before it runs. **Runtime errors** stop the program at the line where they occur. **Logic errors** produce wrong results silently.
-- Read **tracebacks** from the bottom up: error type and message, then file and line.
+- A **program** is a list of exact instructions for a computer. An **algorithm** is the step-by-step method behind it.
+- A computer runs instructions **in order, top to bottom** (**sequence**). Wrong order means wrong result, with no warning.
+- **Python** is a popular, readable programming language, widely used in cyber security.
+- Python code is saved in **`.py` files** and run with `python file.py` (or `python3 file.py`).
+- `print("text")` shows text on the screen, then moves to a new line.
+- Text goes inside **matching quotes**, double or single. Use the other kind on the outside when the text contains a quote.
+- Text is shown **exactly** as typed, spaces and capitals included.
+- `print()` on its own shows a **blank line**.
+- Most first mistakes are a capital `P`, a missing bracket, or a missing or wrong quote.
 
 ### Glossary
 
-| Term | Meaning |
+| Word | Meaning |
 | --- | --- |
-| Algorithm | A step-by-step method for solving a problem |
-| Argument | A value passed to a function inside its brackets |
-| Bug | A mistake in a program |
-| Bytecode | Simple, low-level instructions that Python produces from your source code and then runs on its virtual machine |
-| Call (a function) | Run a function by writing its name followed by brackets |
-| Comment | Text after `#` that Python ignores, written for human readers |
-| Compiler | A program that translates a whole program into another form before it runs |
-| Concatenation | Joining strings end to end with `+` |
-| CPython | The standard Python implementation, written in C, from python.org |
-| Debugging | Finding and fixing bugs |
-| Escape sequence | A backslash code inside a string that stands for a special character, such as `\n` |
-| Exception | Python's name for a runtime error |
-| Expression | Code that Python evaluates to produce a value, such as `7 + 3` |
-| Function | A named piece of code that does a job, such as `print` |
-| High-level language | A language designed for people to read and write, translated for the machine |
-| Interpreter | A program that carries out code as it reads it |
-| Keyword argument | An argument given by name, such as `sep="-"` |
-| Logic error | A bug where the program runs but gives the wrong result |
-| Machine code | Binary instructions a CPU executes directly |
-| Program | An algorithm written in a programming language |
-| REPL | Read–Eval–Print Loop: Python's interactive shell, with the `>>>` prompt |
-| Runtime error | An error that happens while the program is running |
-| Script | A file of Python code, ending in `.py` |
-| Sequence | Running instructions one after another, in order |
-| Source code | The human-written text of a program |
-| Statement | One complete instruction |
-| String | A sequence of characters (text). Python's type name is `str` |
-| String literal | A string written directly in code between quotes |
-| Syntax | The grammar rules of a programming language |
-| Syntax error | Code that breaks the language's grammar rules, so the program cannot start |
-| Traceback | Python's report of a runtime error, showing where and what went wrong |
+| Algorithm | A step-by-step method for doing a task |
+| Blank line | An empty line of output, made with `print()` |
+| Brackets | The round brackets `( )` after `print` that hold what you want to show |
+| Call | To use a function by writing its name and brackets |
+| Error | A message from Python saying it could not do what you wrote |
+| File | A saved document. Python programs are files ending in `.py` |
+| Function | A ready-made command that does a job, such as `print` |
+| Instruction | One step in a program |
+| `print()` | Python's command for showing something on the screen |
+| Program | A list of instructions for a computer, written in a programming language |
+| Programming language | A set of words and rules for writing programs, such as Python or Java |
+| Quotes | The `"` or `'` marks that show where text starts and ends |
+| Run | To make the computer carry out a program |
+| Sequence | Running instructions one after another, from top to bottom |
+| Source code | The text of a program that a person writes |
+| String | A piece of text in quotes, such as `"Hello"` |
 
 ---
 
 ## J. Knowledge check
 
-Answer these in your own words **before** starting the lab. Write your answers in `My-Solutions/Lab-01/knowledge_check.md` and they will be reviewed together with the lab.
+Answer these in your own words **before** you start the lab. Write your answers in `My-Solutions/Lab-01/knowledge_check.md`. Short answers are fine.
 
-1. What is the difference between an algorithm and a program?
-2. Why does a computer need instructions to be more precise than a person does? Give an example from everyday life.
-3. Name the four main parts of a computer from section C.2 and say what each does when a Python program runs.
-4. Why can't a CPU run `print("Hello")` directly?
-5. Explain the difference between a compiler and an interpreter. Where does Python's bytecode fit in?
-6. A file has a perfect line 1 and a syntax error on line 10. What appears when you run it, and why?
-7. A file has a perfect line 1 and a `NameError` on line 10. What appears when you run it, and why?
-8. Why is a logic error often harder to find than a syntax error?
-9. In the REPL, typing `5 * 5` shows `25`. In a script, the same line shows nothing. Why?
-10. What do `sep` and `end` control, and what are their default values?
-11. Predict the exact output of: `print("A", "B", "C", sep="")` and then `print("x", end="-")` followed by `print("y")`.
-12. What does `print("Total:", 4 + 6)` display? What does `print("Total: " + 4 + 6)` do, and why?
-13. Write the string literal you would use to display: `He said "it's fine"`. Give two different ways.
-14. What is wrong with `print("Saved to C:\new\test.txt")`, and how would you fix it?
-15. Who created Python, roughly when, and what is its name taken from? Why should you avoid tutorials that write `print "hello"`?
+1. What is a program? What is an algorithm? How are they different?
+2. Why must instructions for a computer be more exact than instructions for a person? Give your own example.
+3. What does "sequence" mean? What happens if two `print()` lines are in the wrong order?
+4. What does `print("Good morning")` show? Name each part of the line.
+5. What does `print()` with nothing inside show?
+6. Why does `print('It's late')` not work? Write a version that does.
+7. Write one line that shows exactly: `He said "ready".`
+8. What is wrong with each of these, and how would you fix it?
+   - `Print("Hello")`
+   - `print("Hello"`
+   - `print(Hello)`
+9. Why might the terminal show old output after you have changed your file?
+10. Who created Python, and what is it named after?
 
 When you have answered them, open [Lab 1](../Labs/Lab-01-Introduction-to-Programming-and-Python-Hands-on-Workbook.md).

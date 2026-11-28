@@ -1,855 +1,576 @@
-# Day 1 Laboratory — Introduction to Programming and Python
+# Day 1 Laboratory — Showing Text with `print()`
 
-**Part I · Chapter 1 · Day 1** · 30 exercises · Goes with [Lecture 1](../Lectures/Lecture-01-Introduction-to-Programming-and-Python.md)
+**Part I · Chapter 1 · Day 1** · 25 exercises · Goes with [Lecture 1](../Lectures/Lecture-01-Introduction-to-Programming-and-Python.md)
 
 ## Before you start
 
-**What this lab covers:** running Python in the REPL and as scripts, `print()` with one or more values, `sep` and `end`, strings and quotes, escape sequences, triple quotes, string repetition with `*`, simple arithmetic inside `print()`, comments, and the three kinds of error.
+**Today's one skill:** showing text on the screen with `print()`.
 
-**What it does not cover yet:** variables, `input()`, `if`, loops. **Do not use them**, even if you know them from Java. Every exercise can be solved with what the lecture taught. Working inside the limits is part of the training.
+**You may use only:**
 
-### Setup
+- `print("some text")` with double quotes
+- `print('some text')` with single quotes
+- `print()` for a blank line
 
-1. Make sure `python3 --version` (macOS/Linux) or `py --version` (Windows) shows Python 3.
-2. Work inside the `My-Solutions/Lab-01/` folder.
-3. Create **one file per exercise**, named as the exercise says, for example `ex01_hello.py`.
-4. Start every file with a two-line header comment:
+**Do not use** anything else, even if you have seen it online: no maths, no `+`, no `*`, no `sep` or `end`, no `\n`, no `#` comments, no `input()`. Every exercise can be done with the three things above. If you catch yourself using something else, rewrite it.
 
-   ```python
-   # ex01_hello.py
-   # Exercise 1: prints a greeting and my name.
-   ```
+### How to work
 
-5. Run each file from the terminal:
+1. Make the folder `My-Solutions/Lab-01/` if it does not exist. Save every exercise there as its own file, named as the exercise says.
+2. Run each file from that folder:
 
    ```bash
-   cd Python-Module/My-Solutions/Lab-01
-   python3 ex01_hello.py
+   python3 ex01_hello.py      # macOS / Linux
+   python ex01_hello.py       # Windows (or: py ex01_hello.py)
    ```
 
-### Rules that make this lab work
-
-1. **Type every line yourself.** No copy and paste, not even from this lab.
-2. **Predict, then run.** Where an exercise says *predict*, write your prediction as a comment in the file **before** running it.
-3. **Match output exactly** where an exact output is given: same spelling, capitals, spaces and blank lines.
-4. **Stuck?** Re-read the lecture section named in the hint, then ask for a hint. Solutions are released only after you have attempted an exercise.
-5. **Submit for review** in batches (for example, after each level). An exercise is marked ✅ in `PROGRESS.md` only after review.
+3. **Type everything yourself.** No copy and paste.
+4. **Predict before you run.** Where an exercise says *predict*, write your prediction down first (on paper, or in a file called `predictions.md`).
+5. **Match the target output exactly**: same spelling, capitals, spaces and blank lines.
+6. **Stuck?** Re-read the lecture section in the hint, then ask for a hint. A full solution is only shown after you have tried.
+7. **Submit after each level** for review. Exercises are only marked done after review.
 
 ### Levels
 
-| Level | Exercises | Purpose | Rough time |
-| --- | --- | --- | --- |
-| 1 | 1–6 | Basic understanding | 5–10 min each |
-| 2 | 7–12 | Applying the concept | 10 min each |
-| 3 | 13–18 | Combining operations | 10–15 min each |
-| 4 | 19–24 | Problem-solving and debugging | 15–20 min each |
-| 5 | 25–30 | Real-world applications and challenges | 20–45 min each |
+| Level | Exercises | What it is for |
+| --- | --- | --- |
+| 1 | 1–5 | Your first `print()` lines |
+| 2 | 6–10 | Quotes, exact text and blank lines |
+| 3 | 11–15 | Longer programs and lined-up layouts |
+| 4 | 16–20 | Fixing mistakes and predicting output |
+| 5 | 21–25 | Realistic screens and a final program |
 
 ---
 
-## Level 1 — Basic understanding
+## Level 1 — Your first `print()` lines
 
-### Exercise 1 — Hello, Python
+### Exercise 1 — Hello, world
 
-**Level:** 1 · **File:** `ex01_hello.py`
+**File:** `ex01_hello.py`
 
-**Problem:** write your first script.
-
-**Requirements**
-
-- Line 1 of output: `Hello, world!`
-- Line 2 of output: `My name is <your name>.`
-- Use two `print` statements.
-
-**Expected output** (with your own name)
+Write a program that shows exactly:
 
 ```text
 Hello, world!
-My name is Afaq.
 ```
 
-**Then experiment:** run it three times. Change the text each time and save before running. What happens if you run without saving?
+Then change it to show `Hello, Python!` and run it again. Then change it back.
 
-**Tests:** creating, saving and running a script. Basic `print()`.
+**Hint:** Lecture 1, C.4. **Tests:** creating, saving and running a file.
 
 ---
 
-### Exercise 2 — Exploring the REPL
+### Exercise 2 — Your name
 
-**Level:** 1 · **File:** `ex02_repl_notes.py`
+**File:** `ex02_my_name.py`
 
-**Problem:** use the interactive shell and record what you find in a script.
-
-**Requirements**
-
-1. Open the REPL (`python3` or `py`). Type each of these and note what appears:
-   - `7 + 3`
-   - `"Hello"`
-   - `print("Hello")`
-   - `10 / 4`
-   - `import this`
-2. Exit the REPL.
-3. In `ex02_repl_notes.py`, write a comment for each line you typed, recording what the REPL showed.
-4. The script must then **print** three lines:
-   - your Python version, typed as text (for example `Python version: 3.15.0`)
-   - the result of `10 / 4`, calculated by Python
-   - the first rule of "The Zen of Python" (the line after its title), typed as text
-
-**Expected output** (example, your version may differ)
+Write a program that shows your own name on one line, for example:
 
 ```text
-Python version: 3.15.0
-10 / 4 = 2.5
-Beautiful is better than ugly.
+Afaq Ahmad
 ```
 
-**Think about:** why did `"Hello"` show quotes in the REPL but `print("Hello")` did not?
-
-**Tests:** using the REPL, REPL versus script behaviour, getting the version.
+**Tests:** one `print()` with your own text.
 
 ---
 
-### Exercise 3 — Three-line introduction
+### Exercise 3 — Three facts
 
-**Level:** 1 · **File:** `ex03_introduction.py`
+**File:** `ex03_three_facts.py`
 
-**Requirements:** print three lines: your name, your course, and your university. Use three `print` statements, with a comment above each one saying what it prints.
+Show three lines about yourself: your name, your course and your university.
 
-**Expected output** (example)
+**Example output**
 
 ```text
-Name: Afaq Ahmad
-Course: BSc (Hons) Cyber Security
-University: Liverpool John Moores University
+My name is Afaq Ahmad.
+I study BSc Cyber Security.
+I study at LJMU.
 ```
 
-**Tests:** sequence, comments, string literals.
+**Tests:** several `print()` lines run in order.
 
 ---
 
-### Exercise 4 — Blank lines and spacing
+### Exercise 4 — Single quotes
 
-**Level:** 1 · **File:** `ex04_blank_lines.py`
+**File:** `ex04_single_quotes.py`
 
-**Requirements:** produce **exactly** this output, including the two blank lines, using `print()` for the blank lines. Do not use `\n` in this exercise.
+Show the same three lines as Exercise 3, but this time use **single quotes** in every `print()`.
+
+**Question:** is the output any different? Write your answer in `predictions.md`.
+
+**Hint:** Lecture 1, C.7. **Tests:** both kinds of quote do the same job.
+
+---
+
+### Exercise 5 — A blank line
+
+**File:** `ex05_blank_line.py`
+
+Show exactly this, including the empty line in the middle:
 
 ```text
-SECTION 1
-Introduction
+Good morning.
 
-SECTION 2
-Main content
-
-SECTION 3
-Summary
+Time to code.
 ```
 
-**Tests:** `print()` with no arguments, careful output matching.
+**Hint:** Lecture 1, C.9. **Tests:** `print()` with nothing inside.
 
 ---
 
-### Exercise 5 — Quotes inside quotes
+## Level 2 — Quotes, exact text and blank lines
 
-**Level:** 1 · **File:** `ex05_quotes.py`
+### Exercise 6 — Apostrophes
 
-**Problem:** print text that contains quote marks.
+**File:** `ex06_apostrophes.py`
 
-**Requirements:** produce these three lines. Print line 1 with double quotes on the outside, line 2 with single quotes on the outside, and line 3 **twice**, once each way, using escape sequences where needed.
+Show exactly:
 
 ```text
-It's my first day of Python.
-My lecturer said "type every line yourself".
-It's called "Python" after Monty Python.
-It's called "Python" after Monty Python.
+It's Monday.
+I'm at university today.
+Don't forget your student card.
 ```
 
-**Hint:** lecture section C.7, *Strings and string literals* and *Escape sequences*.
-
-**Tests:** choosing quote types, `\'` and `\"`.
+**Hint:** each line contains a `'`, so which quotes must go on the outside? **Tests:** choosing the right quotes.
 
 ---
 
-### Exercise 6 — Fix the capitals
+### Exercise 7 — Quotes inside the text
 
-**Level:** 1 · **File:** `ex06_fix_case.py`
+**File:** `ex07_quotes_inside.py`
 
-**Problem:** this program is broken. Type it exactly as shown first.
+Show exactly:
+
+```text
+My tutor said "practise every day".
+The sign said "Lab 2 is closed".
+```
+
+**Hint:** Lecture 1, C.7 table. **Tests:** single quotes outside, double quotes inside.
+
+---
+
+### Exercise 8 — Capitals and spaces
+
+**File:** `ex08_exact.py`
+
+**Predict** what each line shows, then run it:
 
 ```python
-print("Line A")
-Print("Line B")
-PRINT("Line C")
-print("Line D")
+print("python")
+print("PYTHON")
+print("PyThOn")
+print("p y t h o n")
+print("      python")
 ```
 
-**Requirements**
+**Question:** the last line has spaces inside the quotes. Why is that allowed, when a space **before** `print` is not?
 
-1. **Predict** (as a comment at the top): which lines will appear before the program stops, and what kind of error will it be?
-2. Run it. Record the actual last line of the traceback in a comment.
-3. Fix one line, run again, record the new error, then fix the other line.
-4. The final file must print all four lines and keep your prediction and recorded errors as comments.
-
-**Tests:** case sensitivity, runtime errors, reading a traceback, the run–fix–rerun cycle.
+**Hint:** Lecture 1, C.8 and rule 5. **Tests:** text is shown exactly as typed.
 
 ---
 
-## Level 2 — Applying the concept
+### Exercise 9 — Spacing it out
 
-### Exercise 7 — Separators
+**File:** `ex09_spacing.py`
 
-**Level:** 2 · **File:** `ex07_separators.py`
-
-**Problem:** build formatted values from separate pieces.
-
-**Requirements:** each line must be printed with **one** `print` call that receives the parts as **separate arguments** and uses `sep`. For example, the date is `print("27", "11", "2026", sep=...)`.
+Show exactly this. There are **two** empty lines between `Chapter 1` and `Chapter 2`:
 
 ```text
-27/11/2026
-18:43:00
-192.168.1.10
-www.ljmu.ac.uk
-ERROR|auth|failed login
+Chapter 1
+Programs are lists of instructions.
+
+
+Chapter 2
+Python runs them from top to bottom.
 ```
 
-**Restriction:** none of your strings may contain `/`, `:`, `.` or `|`. Only `sep` may supply them.
-
-**Tests:** `sep`, thinking about how output is assembled.
+**Tests:** using several `print()` lines for blank space.
 
 ---
 
-### Exercise 8 — Staying on one line
+### Exercise 10 — Punctuation
 
-**Level:** 2 · **File:** `ex08_progress_bar.py`
+**File:** `ex10_punctuation.py`
 
-**Requirements:** use **at least six** separate `print` calls to produce this **single** line:
+Show exactly:
 
 ```text
-Scanning ports [######] done
+Wait... what?!
+Cost: £5 (cash only)
+Email: student@ljmu.ac.uk
+50% done -> keep going!
 ```
 
-Each `#` (or group of them) should come from its own `print` call, as if the scan were progressing.
+**Question:** did Python change any of the symbols? Why not?
 
-**Then experiment:** what changes if you forget `end=""` on one of the middle calls? Record the answer in a comment.
-
-**Tests:** `end`, the default newline.
+**Tests:** any character inside quotes is just text.
 
 ---
 
-### Exercise 9 — Python as a calculator
+## Level 3 — Longer programs and lined-up layouts
 
-**Level:** 2 · **File:** `ex09_calculator.py`
+### Exercise 11 — Address label
 
-**Requirements:** print these lines. The text before `=` must be a string, and the answer after `=` **must be calculated by Python**, not typed.
+**File:** `ex11_address_label.py`
+
+Show a parcel address label (use a made-up address):
 
 ```text
-12 + 30 = 42
-100 - 58 = 42
-6 * 7 = 42
-84 / 2 = 42.0
+TO:
+Mr A. Student
+12 Example Street
+Liverpool
+L1 1AA
+United Kingdom
 ```
 
-**Question** (answer in a comment): why is the last answer `42.0` and not `42`?
-
-**Tests:** strings versus expressions, mixing them in one `print`, the `/` operator.
+**Tests:** a longer sequence of `print()` lines.
 
 ---
 
-### Exercise 10 — A table with tabs
+### Exercise 12 — Café menu
 
-**Level:** 2 · **File:** `ex10_device_table.py`
+**File:** `ex12_menu.py`
 
-**Requirements:** print this table using `\t` to separate the columns. Use one `print` per row.
+Show this menu. Use **spaces inside the quotes** to line up the prices:
 
 ```text
-Device	IP address
-Router	192.168.1.1
-Laptop	192.168.1.20
-Phone	192.168.1.35
-Printer	192.168.1.50
+CAMPUS CAFE MENU
+
+Tea          £1.20
+Coffee       £2.50
+Sandwich     £3.75
+Soup         £3.10
 ```
 
-**Then experiment:** add a device called `Smart-TV-Lounge`. What happens to the alignment, and why? Can you fix it with a second `\t` on the other rows? Record what you find.
-
-**Tests:** `\t`, how tab stops work.
+**Hint:** count the characters. Each price starts in the same column. **Tests:** lining up text with spaces.
 
 ---
 
-### Exercise 11 — The backslash trap
+### Exercise 13 — Weekly timetable
 
-**Level:** 2 · **File:** `ex11_backslash_trap.py`
+**File:** `ex13_timetable.py`
 
-**Problem:** Windows file paths contain backslashes, and backslashes start escape sequences.
-
-**Requirements**
-
-1. **Predict** the output of `print("C:\notes\today.txt")` and write it as a comment.
-2. Add that line to your file and run it. Record what really appears, and explain it, in a comment.
-3. Fix it so it prints exactly `C:\notes\today.txt`.
-4. Now try `print("C:\Users\afaq")`. This one does not even run. Record the error type in a comment, then fix it.
-5. The final file must print, correctly:
+Show your university week. Use your real days (Monday, Tuesday and Friday) or make one up. Line up the second column with spaces:
 
 ```text
-C:\notes\today.txt
-C:\Users\afaq
-D:\backup\2026\november
+MY WEEK
+-------
+Monday      University
+Tuesday     University
+Wednesday   Study and work
+Thursday    Study and work
+Friday      University
 ```
 
-**Tests:** escape sequences, `\\`, syntax errors caused by escapes.
+**Tests:** headings, underlines and lined-up columns.
 
 ---
 
-### Exercise 12 — Comment this program
+### Exercise 14 — A box
 
-**Level:** 2 · **File:** `ex12_comment_it.py`
+**File:** `ex14_box.py`
 
-**Problem:** this program works but has no comments. Type it in.
+Draw this box exactly. Every line is **20 characters** wide:
+
+```text
++------------------+
+|                  |
+|   CYBER LAB 1    |
+|                  |
++------------------+
+```
+
+**Then experiment:** delete one space from the middle line and run it. What happens to the right-hand side? Put the space back.
+
+**Hint:** Lecture 1, C.10 and Example 6. **Tests:** counting characters.
+
+---
+
+### Exercise 15 — The tea algorithm
+
+**File:** `ex15_tea.py`
+
+Show the full tea algorithm from Lecture 1, C.1, as a numbered list with a title and a blank line after the title:
+
+```text
+HOW TO MAKE TEA
+
+1. Boil the kettle.
+2. Put a tea bag in the cup.
+3. Pour the water into the cup.
+4. Wait 3 minutes.
+5. Take out the tea bag.
+```
+
+**Then:** add **two more steps** of your own at the end (for example, adding milk), so the algorithm is more exact.
+
+**Tests:** turning an algorithm into a program.
+
+---
+
+## Level 4 — Fixing mistakes and predicting output
+
+### Exercise 16 — Fix the broken lines
+
+**File:** `ex16_fix_me.py`
+
+Each line below has **one** mistake. Type all six into your file **with the mistakes**, then run it and read the error. Fix **only the line the error points at**, run again, and repeat until the program works.
 
 ```python
-print("=" * 24)
-print("  LAB BOOKING SYSTEM")
-print("=" * 24)
-print("Room:", "Byrom Street 1.23")
-print("Date:", "Monday")
-print("Old room:", "James Parsons 2.10")
-print("Status:", "Confirmed")
-print("=" * 24)
+Print("Line one")
+print("Line two"
+print("Line three)
+print('Line four")
+print(Line five)
+print "Line six"
 ```
 
-**Requirements**
-
-1. Add a header comment (file name and purpose).
-2. Add comments that explain **why** each section exists (title, details, footer), not ones that just repeat the code.
-3. The "Old room" line is no longer wanted. **Comment it out** instead of deleting it.
-4. Add one inline comment explaining why the divider uses `"=" * 24`.
-
-**Tests:** writing useful comments, commenting out code.
-
----
-
-## Level 3 — Combining operations
-
-### Exercise 13 — Business card
-
-**Level:** 3 · **File:** `ex13_business_card.py`
-
-**Requirements:** print a business card for yourself, framed with a border.
-
-- The top and bottom borders must be made with string repetition (`"*" * ...`), not typed out.
-- At least four lines of details: name, course, email (invent one) and one interest.
-- Use `\t` or spaces to indent the details inside the frame.
-
-**Example**
+**Target output**
 
 ```text
-********************************
-	AFAQ AHMAD
-	Cyber Security Student
-	afaq@example.com
-	Interest: Linux and networks
-********************************
+Line one
+Line two
+Line three
+Line four
+Line five
+Line six
 ```
 
-**Challenge:** make the right-hand side of the frame line up too (`*` at both ends of every line). You will need to count characters.
+**Write down** each error message you saw, and what fixed it, in `predictions.md`.
 
-**Tests:** string repetition, escapes, planning output layout.
+**Notice:** the errors will **not** come in order from line 1 to line 6, and some lines are reported before line 1 is. That is normal. Write down the order you saw. Day 2 explains why it happens.
 
----
-
-### Exercise 14 — Shapes with repetition
-
-**Level:** 3 · **File:** `ex14_shapes.py`
-
-**Requirements:** using string repetition, and `+` to join two strings, print a right-angle triangle, then a blank line, then a centred pyramid.
-
-```text
-*
-**
-***
-****
-*****
-
-    *
-   ***
-  *****
- *******
-*********
-```
-
-**Restriction:** no string in your code may contain more than one `*` or more than one space. Repetition must do the work.
-
-**Hint:** each pyramid row is some spaces followed by some stars. Work out the two numbers for each row on paper first. What pattern do you see?
-
-**Tests:** `*` and `+` on strings, spotting a pattern (an early taste of algorithmic thinking).
+**Hint:** Lecture 1, section G. **Tests:** recognising and fixing the common mistakes.
 
 ---
 
-### Exercise 15 — Same output, three ways
+### Exercise 17 — Wrong quotes
 
-**Level:** 3 · **File:** `ex15_three_ways.py`
+**File:** `ex17_wrong_quotes.py`
 
-**Problem:** produce this block of output three separate times, each time a different way.
-
-```text
-Name: Ada Lovelace
-Born: 1815
-Known for: notes on the Analytical Engine
-```
-
-**Requirements**
-
-- **Way 1:** three `print` calls.
-- **Way 2:** **one** `print` call with **one** ordinary string, using `\n`. No triple quotes.
-- **Way 3:** **one** `print` call with **three** separate string arguments and a `sep` value.
-- Print a line of 20 dashes between each version.
-- In a comment, say which way you think is most readable, and why.
-
-**Tests:** `\n`, `sep`, recognising that one problem has many correct solutions.
-
----
-
-### Exercise 16 — Unit converter (fixed values)
-
-**Level:** 3 · **File:** `ex16_unit_converter.py`
-
-**Problem:** 1 mile is exactly 1.609344 km. Print a small conversion table where **every converted value is calculated by Python**.
-
-**Expected output**
-
-```text
---- Distance converter ---
-1 mile = 1.609344 km
-5 miles = 8.04672 km
-Marathon (26.2 miles) = 42.1648128 km
-10 km = 6.2137119223733395 miles
-```
-
-**Hint:** km → miles means dividing by 1.609344.
-
-**Question** (comment): the last answer has a lot of decimal places. Is that a bug in your program? What would a real user prefer to see? (You will learn to fix this in Chapter 8.)
-
-**Tests:** arithmetic expressions inside `print`, multiplication versus division, critically reading output.
-
----
-
-### Exercise 17 — Receipt, version 2
-
-**Level:** 3 · **File:** `ex17_receipt_v2.py`
-
-**Problem:** extend the lecture's receipt (Demo 12) to three items.
-
-**Requirements**
-
-- Items: Coffee £2.40, Sandwich £3.75, Cookie £1.20.
-- A title, dividers made with repetition, one line per item, and a total **calculated by Python** from the three prices.
-- Run it and look **very** closely at the total.
-
-**What you should discover:** the total is not displayed as `7.35`. In a comment, record exactly what it shows. This is not a bug in your code. It is how computers store decimal numbers, and Chapter 7 explains why. For now, write down what you think a customer would think if they saw it, and why this matters in real software (banking, for example).
-
-**Tests:** combining every output feature so far, noticing surprising output, floating-point awareness.
-
----
-
-### Exercise 18 — Prediction drill
-
-**Level:** 3 · **File:** `ex18_predict.py`
-
-**Problem:** type these lines in exactly. **Before running**, write your predicted output for each one as a comment directly above it. Show spaces as `·` in your prediction if that helps.
+These two lines are broken. **Predict** why, then fix each one in **two different ways**: once by changing the outer quotes, and once by rewording the text so the problem character is not needed.
 
 ```python
-print("A", "B", sep="")
-print("A", "B", sep="", end="")
-print("C")
-print("1", "2", "3", sep=" > ")
-print("x", "y", sep="\n", end="\n\n")
-print("done")
-print("[", "OK", "]")
-print("[", "OK", "]", sep="")
-print("Total:", 3 + 4, "items")
-print("3 + 4", "=", 3 + 4)
+print('I can't come today.')
+print("Press "Enter" to continue.")
 ```
 
-Then run it. For every prediction that was wrong, add a comment: **what you predicted, what happened, and why.**
-
-**Tests:** precise mental model of `sep`, `end` and expressions. This is the habit of predicting output.
+**Tests:** understanding why matching quotes matter.
 
 ---
 
-## Level 4 — Problem-solving and debugging
+### Exercise 18 — Put it in order
 
-### Exercise 19 — Fix the syntax errors
+**File:** `ex18_order.py`
 
-**Level:** 4 · **File:** `ex19_fix_syntax.py`
-
-**Problem:** this program contains **five** syntax errors. Type it in exactly as shown, errors included.
+This program logs into a computer, but the steps are mixed up. Type it, run it, then **move the lines** so the steps come out in the correct order. Do not change any text.
 
 ```python
-# Student welcome message
-print("Welcome to LJMU"
-print('Your course: Cyber Security")
-print("Building: "Byrom Street"")
- print("Induction week starts on Monday")
-print "Good luck!"
+print("4. Open your files")
+print("2. Type your username")
+print("1. Switch on the computer")
+print("5. Log out when finished")
+print("3. Type your password")
 ```
 
-**Requirements**
+**Question:** Python gave no error message. Why not? Was the program "wrong"?
 
-1. Run it. Python reports **only one** syntax error at a time. Record that error message as a comment.
-2. Fix **only** that error and run again. Repeat until it works.
-3. Number your comments so the file ends up with a log of all five errors and each fix.
-4. Final output:
-
-```text
-Welcome to LJMU
-Your course: Cyber Security
-Building: "Byrom Street"
-Induction week starts on Monday
-Good luck!
-```
-
-**Watch out:** the first error Python reports may **not** be the first mistake in the file. Python reads the file in stages, and some mistakes (like a broken string) are caught in an earlier stage than others (like a missing bracket). Record the order in which Python actually reports them.
-
-**Questions** (comments): why does Python show one syntax error at a time? Why does even `Welcome to LJMU` never print until every error is fixed?
-
-**Tests:** reading `SyntaxError` and `IndentationError` messages, fixing systematically.
+**Hint:** Lecture 1, C.2 and Example 7. **Tests:** sequence.
 
 ---
 
-### Exercise 20 — The great error experiment
+### Exercise 19 — Predict the output
 
-**Level:** 4 · **Files:** `ex20a_runtime.py` and `ex20b_syntax.py`
+**File:** `ex19_predict.py`
 
-**Problem:** prove for yourself the difference between runtime and syntax errors.
-
-**Requirements**
-
-1. In `ex20a_runtime.py`, write six `print` statements labelled `Step 1` to `Step 6`. Make **Step 4** a `NameError` by misspelling `print` as `prnt`.
-2. In `ex20b_syntax.py`, write the same six statements, but this time make **Step 4** a syntax error by leaving off its closing bracket.
-3. **Predict** for each file which steps will print. Write your predictions as comments, then run both.
-4. In a comment at the bottom of `ex20b_syntax.py`, explain the difference in what happened, using the words **compile**, **bytecode** and **run**.
-
-**Tests:** the compile-then-run model of Python from lecture section C.4.
-
----
-
-### Exercise 21 — Text plus number
-
-**Level:** 4 · **File:** `ex21_type_error.py`
-
-**Problem:** this line fails:
+**Before typing anything**, write down exactly what this program will show, including blank lines:
 
 ```python
-print("Total devices: " + 7)
-```
-
-**Requirements**
-
-1. Run it and record the error type and message in a comment.
-2. Explain in your own words, in a comment, what `concatenate`, `str` and `int` mean in the message.
-3. Write **two different** corrected versions that both print `Total devices: 7`.
-4. Write a third line that prints `Total devices: 7` where the `7` is **calculated** as `4 + 3`. Which of your two fixes works for this, and why does the other one not?
-
-**Tests:** `TypeError`, `+` on strings versus numbers, choosing the right fix.
-
----
-
-### Exercise 22 — The wrong average
-
-**Level:** 4 · **File:** `ex22_average.py`
-
-**Problem:** a student wants the average of their three marks: 64, 71 and 58. Their program is:
-
-```python
-print("Average mark:", 64 + 71 + 58 / 3)
-```
-
-**Requirements**
-
-1. Work out the correct average **by hand** first (to two decimal places). Write it in a comment.
-2. Run the program. Write what it actually printed in a comment.
-3. What kind of error is this: syntax, runtime or logic? Explain how you know.
-4. Explain what Python actually calculated. (Hint: which operation happens first in normal maths?)
-5. Fix it so it prints the right average.
-
-**Tests:** spotting logic errors by checking against an expected answer, operator order (a preview of Chapter 11).
-
----
-
-### Exercise 23 — Trace table
-
-**Level:** 4 · **File:** `ex23_trace.py`
-
-**Problem:** read this program **without running it**.
-
-```python
-print("Start", end=" | ")
-print("A", "B", sep="-", end=" | ")
+print("A")
 print()
-print("Two\tTabs\there")
-print("=" * 3 + ">", "Go")
-# print("Hidden")
-print("End", end="!\n")
+print("B")
+print("C")
+print()
+print()
+print("  D")
 ```
 
-**Requirements**
+Then type it, run it and compare. How many lines of output were there in total, counting blank ones?
 
-1. In a comment block at the top of your file, build a trace table with the columns **Line**, **What happens** and **Output after this line**.
-2. Write the complete predicted output.
-3. Then type the program below your comments and run it. Mark each line of your trace ✓ (correct) or ✗ (wrong) and explain each ✗.
-
-**Tests:** tracing execution step by step, which is the core skill for reading any program.
+**Tests:** reading code and predicting output.
 
 ---
 
-### Exercise 24 — From algorithm to program
+### Exercise 20 — Copy the target
 
-**Level:** 4 · **File:** `ex24_algorithm.py`
+**File:** `ex20_copy_target.py`
 
-**Problem:** programming starts with precise steps. Here is a vague algorithm for resetting a forgotten password:
-
-```text
-1. Go to the website.
-2. Reset your password.
-3. Log in.
-```
-
-**Requirements**
-
-1. In comments, list **at least three** questions a literal-minded computer (or a confused new user) would ask about these steps.
-2. Rewrite the algorithm, in comments, as **at least eight** precise numbered steps that answer those questions.
-3. Write a program that prints your improved algorithm as a neat, numbered help page, with a title and dividers made by repetition.
-
-**Example start of output**
+Write a program that shows **exactly** this. Look carefully at the capitals, spaces and blank lines:
 
 ```text
-====================================
-  HOW TO RESET YOUR PASSWORD
-====================================
-Step 1: Open a web browser.
-Step 2: ...
+  WARNING
+
+Do NOT share your password.
+  Not with friends.
+  Not with "IT support" on the phone.
+
+Stay safe online.
 ```
 
-**Tests:** decomposition, precision, thinking like a programmer (lecture section C.1).
+**Tests:** precision. Every character must match.
 
 ---
 
-## Level 5 — Real-world applications and challenges
+## Level 5 — Realistic screens and a final program
 
-### Exercise 25 — Linux boot screen
+### Exercise 21 — Login screen
 
-**Level:** 5 · **File:** `ex25_boot_screen.py`
+**File:** `ex21_login_screen.py`
 
-**Problem:** simulate the start-up messages of a Linux server.
+Make a text login screen for a made-up company, **Northgate Systems**. It must have a border at the top and bottom, the company name, a blank line, two lines `Username:` and `Password:`, a blank line, and a warning line. For example:
 
-**Requirements**
+```text
+==================================
+        NORTHGATE SYSTEMS
+==================================
 
-- An ASCII-art banner made with triple quotes, showing a server name you invent.
-- At least eight service lines, in the form `[  OK  ] Started <service>.`
-- At least one `[FAILED]` line, followed by an indented hint line starting with `\t`.
-- One line printed piece by piece with `end=""`, for example `Checking disks.....done`.
-- A summary line where the number of services is **calculated**, for example `Services started: 8 of 9`, with 8 and 9 written as sums such as `5 + 3`.
+Username:
+Password:
 
-**Example extract**
+Authorised users only.
+==================================
+```
+
+You cannot type into it yet (that comes in Chapter 10). Today you are only designing what it looks like.
+
+**Tests:** planning a screen layout.
+
+---
+
+### Exercise 22 — Security alert banner
+
+**File:** `ex22_alert.py`
+
+Show a security alert box like this, with every line the same width:
+
+```text
+**************************************
+*                                    *
+*   SECURITY ALERT                   *
+*   Unusual login from new device    *
+*   Time: 02:14                      *
+*                                    *
+**************************************
+```
+
+**Hint:** count the width of the top line first, then make every other line match it. **Tests:** careful alignment.
+
+---
+
+### Exercise 23 — Computer start-up messages
+
+**File:** `ex23_boot.py`
+
+When a Linux computer starts, it shows lines like these. Make a program that shows at least **eight** start-up lines in this style:
 
 ```text
 [  OK  ] Started Network Manager.
-[  OK  ] Started OpenSSH server daemon.
-[FAILED] Failed to start Apache web server.
-	See 'systemctl status apache2' for details.
-Checking disks.....done
+[  OK  ] Started Firewall.
+[  OK  ] Reached target Login Prompts.
+[FAILED] Failed to start Printer Service.
 ```
 
-**Tests:** everything from Day 1, combined into a realistic output. Planning a larger program.
+Include at least one `[FAILED]` line, then a blank line, then `Welcome to Ubuntu`.
+
+**Tests:** consistent formatting over a longer program.
 
 ---
 
-### Exercise 26 — Security alert banner
+### Exercise 24 — A help screen
 
-**Level:** 5 · **File:** `ex26_security_alert.py`
+**File:** `ex24_help.py`
 
-**Problem:** the IT security team wants a terminal message warning students about a phishing email.
-
-**Requirements**
-
-- A bordered header with the word `SECURITY ALERT`, made with repetition.
-- A short description of the (fictional) phishing email: sender, subject line in quotes, and what it asks for.
-- A numbered list of at least four "What you should do" steps.
-- A line with a fake reporting address and a Windows path to a guidance document, printed correctly with backslashes.
-- At least one line using `sep` and one using `end`.
-- A footer.
-- Clear header and section comments in your code.
-
-**Tests:** quotes, escapes, layout, writing output for a real audience.
-
----
-
-### Exercise 27 — Weekly timetable
-
-**Level:** 5 · **File:** `ex27_timetable.py`
-
-**Requirements**
-
-- Print a Monday-to-Friday timetable (real or invented) as a table with columns **Day**, **Time** and **Activity**, aligned with `\t`.
-- Include at least seven rows, a header row and a divider under the header.
-- At the end, print `Total study hours:` with a value **calculated** from your timetable (for example `3 + 2 + 4`).
-- Print `Average per day:` calculated as total divided by 5.
-
-**Tests:** tables, tab alignment with uneven text lengths, calculations inside `print`.
-
----
-
-### Exercise 28 — Network inventory report
-
-**Level:** 5 · **File:** `ex28_network_report.py`
-
-**Problem:** a lab network has two subnets. Produce an inventory report.
-
-**Requirements**
-
-- Title block with the report date built with `sep` (as in Exercise 7).
-- **Subnet A** section: at least four devices with hostname, IP address and role, tab-aligned.
-- **Subnet B** section: at least three devices in the same layout.
-- A summary that prints the device count of each subnet and the **calculated** total.
-- A "Notes" section written as a single triple-quoted string over at least three lines.
-- Use the private address ranges `192.168.x.x` or `10.x.x.x` only.
-
-**Tests:** structuring a longer program into sections, consistent layout.
-
----
-
-### Exercise 29 — A `--help` screen
-
-**Level:** 5 · **File:** `ex29_help_screen.py`
-
-**Problem:** command-line tools print a help screen when run with `--help`. Recreate one for an imaginary tool called `logcheck`.
-
-**Expected shape** (exact contents are up to you)
+Command-line tools show a help screen when you ask for help. Make one for a made-up tool called `logscan`:
 
 ```text
-Usage: logcheck [OPTIONS] FILE
+logscan - search log files for problems
 
-Scan a log file for failed login attempts.
+Usage:
+  logscan FILE
+  logscan --help
 
 Options:
-  -h, --help          Show this message and exit.
-  -v, --verbose       Show every matching line.
-  -o, --output PATH   Save the report to PATH.
-  -n, --top N         Show the N most frequent IP addresses.
+  --failed     show failed logins only
+  --today      show today's entries only
+  --help       show this help message
 
-Examples:
-  logcheck /var/log/auth.log
-  logcheck -n 5 -o report.txt "C:\logs\security.log"
+Example:
+  logscan auth.log --failed
 ```
 
-**Requirements**
+Keep the option descriptions lined up.
 
-- At least four options and two examples.
-- The options must line up in columns.
-- At least one example containing a Windows path and quotes, printed correctly.
-- Use at least two different techniques from today (for example triple quotes for one section, separate `print`s for another), and say in a comment why you chose each.
-
-**Tests:** precise text layout, escapes inside realistic content, professional conventions.
+**Tests:** a realistic, neatly laid-out program.
 
 ---
 
-### Exercise 30 — Capstone: "About me" program
+### Exercise 25 — Final program: about me
 
-**Level:** 5 · **File:** `ex30_capstone.py`
+**File:** `ex25_about_me.py`
 
-**Problem:** write a complete, well-organised program that introduces you and your learning plan. This is the Day 1 mini-project.
+Write a program that introduces you. It must:
 
-**Requirements**
+- start with a title inside a box (at least 3 lines),
+- have **three** sections with headings: `ABOUT ME`, `MY COURSE` and `MY GOALS`, each followed by an underline made of `-` characters,
+- have at least two lines under each heading,
+- use at least one line with an apostrophe and one with double quotes in the text,
+- have a blank line between sections,
+- end with a closing border line,
+- be at least **20 lines** of output.
 
-Your program must:
-
-1. Produce **at least 25 lines** of output.
-2. Start with a header comment: file name, author, date and a one-sentence description.
-3. Be divided into **at least four sections** (for example: banner, about me, my modules, my Python plan, footer), each with a section comment.
-4. Use **every** one of these at least once, and label each with a comment such as `# uses: sep`:
-   - `print()` for a blank line
-   - several arguments in one `print`
-   - `sep`
-   - `end`
-   - `\n`
-   - `\t`
-   - an escaped quote (`\"` or `\'`)
-   - `\\`
-   - a triple-quoted string
-   - string repetition
-   - string joining with `+`
-   - at least **three** calculations, such as weeks remaining in the semester, hours of Python per week, or days until a deadline
-5. Contain one commented-out line, with a comment explaining why it is switched off.
-6. Run with **no errors**, and contain **no logic errors**. Check every calculation by hand and write the hand-worked answer in a comment next to it.
-
-**Self-check before submitting**
-
-- [ ] 25+ lines of output
-- [ ] Header comment complete
-- [ ] Four or more commented sections
-- [ ] Every feature in the list used and labelled
-- [ ] Three or more calculations, each hand-checked in a comment
-- [ ] One commented-out line, with a reason
-- [ ] Output is tidy and aligned
-- [ ] No variables, `input()`, `if` or loops (they are not taught yet)
-
-**Tests:** everything in Chapter 1, plus planning, organisation and self-checking.
-
----
-
-## Extension (optional, for fast finishers)
-
-These are not required, but they stretch you.
-
-- **E1.** Find out what `\a` does in a string. Try it in your terminal. Does it work everywhere?
-- **E2.** In the REPL, type `help(print)`. Read it, and find one setting of `print` the lecture did not mention. What do you think it does? (Press `q` to quit the help screen.)
-- **E3.** Make Exercise 14's pyramid twice as tall (ten rows). Did you have to think about each row separately, or did you spot a rule? Write the rule in plain English. Loops (Chapter 22) will let Python apply it for you.
-- **E4.** Research one Python tool used in cybersecurity (Scapy, Volatility or Impacket) and print a five-line summary of what it does. Use the official project page as your source and include its link in the output.
+**Tests:** everything from today in one program.
 
 ---
 
 ## Submitting for review
 
-When you finish a level, say **"Review Day 1, Level N"** and share your files (paste them, or commit and push them to this repository). For each exercise you will get:
+When you finish a level, say **"Review Day 1, Level N"** and share your files (paste them, or push them to the repository). For each exercise you get:
 
-- ✅ pass, or 🔁 revise
-- syntax, logic or style issues, with **why** they matter
-- an improved or alternative solution, **after** you have attempted it
-- a short note on what to practise
-
-Reference solutions go in `Reference-Solutions/Lab-01/` only after review.
+- ✅ pass, or 🔁 try again
+- what is wrong and **why**
+- a model answer, but only after you have tried
 
 ## Progress tracker
 
-Copy this into `PROGRESS.md` as you go, or tick it here.
-
 | # | Exercise | Attempted | Reviewed |
 | --- | --- | --- | --- |
-| 1 | Hello, Python | ⬜ | ⬜ |
-| 2 | Exploring the REPL | ⬜ | ⬜ |
-| 3 | Three-line introduction | ⬜ | ⬜ |
-| 4 | Blank lines and spacing | ⬜ | ⬜ |
-| 5 | Quotes inside quotes | ⬜ | ⬜ |
-| 6 | Fix the capitals | ⬜ | ⬜ |
-| 7 | Separators | ⬜ | ⬜ |
-| 8 | Staying on one line | ⬜ | ⬜ |
-| 9 | Python as a calculator | ⬜ | ⬜ |
-| 10 | A table with tabs | ⬜ | ⬜ |
-| 11 | The backslash trap | ⬜ | ⬜ |
-| 12 | Comment this program | ⬜ | ⬜ |
-| 13 | Business card | ⬜ | ⬜ |
-| 14 | Shapes with repetition | ⬜ | ⬜ |
-| 15 | Same output, three ways | ⬜ | ⬜ |
-| 16 | Unit converter | ⬜ | ⬜ |
-| 17 | Receipt, version 2 | ⬜ | ⬜ |
-| 18 | Prediction drill | ⬜ | ⬜ |
-| 19 | Fix the syntax errors | ⬜ | ⬜ |
-| 20 | The great error experiment | ⬜ | ⬜ |
-| 21 | Text plus number | ⬜ | ⬜ |
-| 22 | The wrong average | ⬜ | ⬜ |
-| 23 | Trace table | ⬜ | ⬜ |
-| 24 | From algorithm to program | ⬜ | ⬜ |
-| 25 | Linux boot screen | ⬜ | ⬜ |
-| 26 | Security alert banner | ⬜ | ⬜ |
-| 27 | Weekly timetable | ⬜ | ⬜ |
-| 28 | Network inventory report | ⬜ | ⬜ |
-| 29 | A `--help` screen | ⬜ | ⬜ |
-| 30 | Capstone: "About me" program | ⬜ | ⬜ |
+| 1 | Hello, world | ⬜ | ⬜ |
+| 2 | Your name | ⬜ | ⬜ |
+| 3 | Three facts | ⬜ | ⬜ |
+| 4 | Single quotes | ⬜ | ⬜ |
+| 5 | A blank line | ⬜ | ⬜ |
+| 6 | Apostrophes | ⬜ | ⬜ |
+| 7 | Quotes inside the text | ⬜ | ⬜ |
+| 8 | Capitals and spaces | ⬜ | ⬜ |
+| 9 | Spacing it out | ⬜ | ⬜ |
+| 10 | Punctuation | ⬜ | ⬜ |
+| 11 | Address label | ⬜ | ⬜ |
+| 12 | Café menu | ⬜ | ⬜ |
+| 13 | Weekly timetable | ⬜ | ⬜ |
+| 14 | A box | ⬜ | ⬜ |
+| 15 | The tea algorithm | ⬜ | ⬜ |
+| 16 | Fix the broken lines | ⬜ | ⬜ |
+| 17 | Wrong quotes | ⬜ | ⬜ |
+| 18 | Put it in order | ⬜ | ⬜ |
+| 19 | Predict the output | ⬜ | ⬜ |
+| 20 | Copy the target | ⬜ | ⬜ |
+| 21 | Login screen | ⬜ | ⬜ |
+| 22 | Security alert banner | ⬜ | ⬜ |
+| 23 | Computer start-up messages | ⬜ | ⬜ |
+| 24 | A help screen | ⬜ | ⬜ |
+| 25 | Final program: about me | ⬜ | ⬜ |

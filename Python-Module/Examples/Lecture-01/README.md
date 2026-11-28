@@ -1,22 +1,16 @@
 # Day 1 examples
 
-Code from the lecture, one file per demo. Type each one yourself first, then compare.
+Code from Lecture 1. Type each one yourself first, run it, then compare with the file here.
 
-| File | Lecture demo |
+| File | Lecture example |
 | --- | --- |
-| `ex01_hello.py` | Demo 1 — Hello, world |
-| `ex02_several_lines.py` | Demo 2 — Sequence |
-| `ex03_print_options.py` | Demo 3 — Several values, `sep` and `end` |
-| `ex04_text_versus_numbers.py` | Demo 4 — Text versus numbers |
-| `ex05_escape_sequences.py` | Demo 5 — Escape sequences |
-| `ex06_triple_quotes.py` | Demo 6 — Triple quotes |
-| `ex07_comments.py` | Demo 7 — Comments |
-| `ex08_syntax_error.py` | Demo 8 — Syntax error (deliberate) |
-| `ex09_name_error.py` | Demo 9 — Runtime error (deliberate) |
-| `ex10_type_error.py` | Demo 10 — Type error (deliberate) |
-| `ex11_logic_error.py` | Demo 11 — Logic error (deliberate) |
-| `ex12_receipt.py` | Demo 12 — A small realistic program |
+| `ex01_hello.py` | Example 1 — Hello, world |
+| `ex02_three_lines.py` | Example 2 — Three lines |
+| `ex03_quotes.py` | Example 3 — Quotes |
+| `ex04_exact_text.py` | Example 4 — Exactly as typed |
+| `ex05_blank_lines.py` | Example 5 — Blank lines |
+| `ex06_banner.py` | Example 6 — A banner |
+| `ex07_order_matters.py` | Example 7 — Order matters |
+| `ex08_welcome_screen.py` | Example 8 — A real-looking welcome screen |
 
-Files 08–10 are **meant** to fail. Run them and read the error messages.
-
-Run any example from this folder with `python3 ex01_hello.py` (or `py ex01_hello.py` on Windows).
+Run one from this folder with `python3 ex01_hello.py` (macOS/Linux) or `python ex01_hello.py` (Windows).

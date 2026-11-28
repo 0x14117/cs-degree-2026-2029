@@ -24,6 +24,10 @@ Template:
 
 Course set up. Lecture and lab ready. Entry to be written after studying.
 
-## Day 2 — 2026-11-28 — Understanding Programming Languages in Depth
+## Day 2 — 2026-11-28 — How Programming Languages Work
+
+Lecture and lab ready. Entry to be written after studying.
+
+## Day 3 — 2026-11-28 — Installing Python and Setting Up Your Environment
 
 Lecture and lab ready. Entry to be written after studying.

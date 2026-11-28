@@ -2,7 +2,7 @@
 
 **Course → Parts → Chapters → Daily lectures → Laboratories → Assessments → Projects**
 
-Each chapter takes one or more learning days. A day is one lecture plus one laboratory of at least 25 exercises. I move on when my lab work shows I understand the chapter, not when I have finished reading it.
+Each chapter takes one or more learning days. A day teaches **one skill**: one lecture plus one laboratory of 25 exercises that practise only that skill, using only what has already been taught. I move on when my lab work shows I understand the chapter, not when I have finished reading it.
 
 Status key: ✅ done · 🟡 in progress · ⬜ not started
 
@@ -14,19 +14,19 @@ Day numbers are planned, not fixed. Hard chapters will get extra days.
 
 | Ch | Chapter | Planned days | Status |
 | --- | --- | --- | --- |
-| 1 | Introduction to programming and Python (what a program is, languages, how Python runs code, `print()`, first errors) | 1 | 🟡 |
-| 2 | Understanding programming languages in depth (compilers, interpreters, bytecode, CPython) | 2 | 🟡 |
-| 3 | Installing Python and setting up the development environment (python.org, VS Code, terminal, PATH) | 3 | ⬜ |
+| 1 | Introduction to programming and Python (what a program is, sequence, showing text with `print()`) | 1 | 🟡 |
+| 2 | How programming languages work (machine code, compilers and interpreters, check first then run, syntax, runtime and logic errors) | 2 | 🟡 |
+| 3 | Installing Python and setting up the development environment (install, terminal basics, PATH, VS Code) | 3 | 🟡 |
 | 4 | The Python interpreter and execution (REPL, scripts, `python -c`, how a `.py` file is run) | 4 | ⬜ |
 | 5 | Variables and memory (names, objects, assignment, naming rules) | 5–6 | ⬜ |
 | 6 | Data types overview (`type()`, objects have types) | 7 | ⬜ |
 | 7 | Integers and floating-point numbers (arithmetic, `//`, `%`, `**`, float precision) | 8–9 | ⬜ |
-| 8 | Strings and character operations (quotes, escapes, concatenation, f-strings, methods) | 10–11 | ⬜ |
+| 8 | Strings and character operations (escape sequences such as `\n`, triple quotes, joining with `+`, repeating with `*`, f-strings, methods) | 10–11 | ⬜ |
 | 9 | Boolean values (`True`, `False`, truthiness) | 12 | ⬜ |
-| 10 | Input and output (`input()`, formatted output) | 13 | ⬜ |
+| 10 | Input and output (`input()`, `print()` with several values, `sep` and `end`, formatted output) | 13 | ⬜ |
 | 11 | Operators and expressions (precedence, associativity) | 14 | ⬜ |
 | 12 | Type conversion (`int()`, `float()`, `str()`, conversion errors) | 15 | ⬜ |
-| 13 | Comments and code readability (PEP 8 basics) | 16 | ⬜ |
+| 13 | Comments (`#`) and code readability (PEP 8 basics) | 16 | ⬜ |
 | 14 | Basic debugging (reading tracebacks, print debugging) | 17 | ⬜ |
 | — | **Part I assessment + project:** unit converter and student grade calculator | 18–19 | ⬜ |
 
@@ -131,7 +131,7 @@ Day numbers are planned, not fixed. Hard chapters will get extra days.
 | 79 | Regular expressions | ⬜ |
 | 80 | Dates and times | ⬜ |
 | 81 | Memory management and garbage collection | ⬜ |
-| 82 | Python internals (bytecode, `dis`) | ⬜ |
+| 82 | Python internals (bytecode, the `dis` disassembler, `.pyc` files, the compiler pipeline) | ⬜ |
 | 83 | Performance optimisation | ⬜ |
 
 ## Part VIII — Software Engineering
@@ -215,6 +215,6 @@ All security work happens on my own machines or in authorised lab environments o
 
 | When | What |
 | --- | --- |
-| Every day | Lecture knowledge check, lab of 25+ exercises, review and feedback |
+| Every day | Lecture knowledge check, lab of 25 exercises on that day's skill, review and feedback |
 | Every week | Revision, practical assessment across the week's topics, one small project, weak-area list |
 | End of each part | Theory test, practical exam, larger independent project, code review |

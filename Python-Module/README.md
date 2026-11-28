@@ -1,11 +1,12 @@
 # Python Module — Python Mastery
 
-Self-study Python course, from beginner to professional. Each day is one lecture plus one hands-on lab of at least 25 exercises.
+Self-study Python course, from beginner to professional. Each day teaches **one skill**: one plain-English lecture, plus one hands-on lab of 25 exercises that practise only that skill. Lectures never rely on anything that has not been taught yet.
 
 | # | Lecture | Lab |
 | --- | --- | --- |
-| 1 | [Introduction to Programming and Python](Lectures/Lecture-01-Introduction-to-Programming-and-Python.md) | [Hands-on Workbook (30 exercises)](Labs/Lab-01-Introduction-to-Programming-and-Python-Hands-on-Workbook.md) |
-| 2 | [Understanding Programming Languages in Depth](Lectures/Lecture-02-Understanding-Programming-Languages-in-Depth.md) | [Hands-on Workbook (30 exercises)](Labs/Lab-02-Understanding-Programming-Languages-in-Depth-Hands-on-Workbook.md) |
+| 1 | [Introduction to Programming and Python](Lectures/Lecture-01-Introduction-to-Programming-and-Python.md): showing text with `print()` | [Hands-on Workbook (25 exercises)](Labs/Lab-01-Introduction-to-Programming-and-Python-Hands-on-Workbook.md) |
+| 2 | [How Programming Languages Work](Lectures/Lecture-02-How-Programming-Languages-Work.md): check first, then run | [Hands-on Workbook (25 exercises)](Labs/Lab-02-How-Programming-Languages-Work-Hands-on-Workbook.md) |
+| 3 | [Installing Python and Setting Up Your Environment](Lectures/Lecture-03-Installing-Python-and-Setting-Up-Your-Environment.md): Python, the terminal and VS Code | [Hands-on Workbook (25 exercises)](Labs/Lab-03-Installing-Python-and-Setting-Up-Your-Environment-Hands-on-Workbook.md) |
 
 ## How to study a day
 
@@ -38,6 +39,6 @@ Python-Module/
 
 ## Conventions
 
-- Python 3 only. Code is checked with Python 3.13 and the 3.15 series. Error message wording can differ slightly between versions.
+- Python 3 only. Code is checked with Python 3.13 and 3.14. Error message wording can differ slightly between versions.
 - Exercise files are named `ex01_hello.py`, `ex02_….py` and so on.
 - No virtual environments, caches or secrets in Git (see `.gitignore`).
